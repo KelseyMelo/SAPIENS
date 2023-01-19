@@ -10028,6 +10028,244 @@ warning 6035: The relationship 'FK_historico_notas_notas' has columns that are n
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams>
+      <Diagram DiagramId="88a4b0faa7aa4ff39eacea1c15a1210f" Name="Diagram1">
+        <EntityTypeShape EntityType="serpi_homologModel.areas_concentracao_coordenadores" Width="1.5" PointX="14.25" PointY="63.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.areas_concentracao_disciplinas" Width="1.5" PointX="12" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.atualizacaoEndereco" Width="1.5" PointX="3" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.banca_professores" Width="1.5" PointX="13.5" PointY="52" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.conceitos_de_aprovacao" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.curso_valor_banca" Width="1.5" PointX="6.75" PointY="53.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.curso_valor_hora_aula" Width="1.5" PointX="15" PointY="60.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.curso_valor_orientacao" Width="1.5" PointX="6.75" PointY="61.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.datas_aulas" Width="1.5" PointX="3.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.disciplinas_professores" Width="1.5" PointX="14.25" PointY="39.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.disciplinas_requisitos" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.estados_registros" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.fornecedores" Width="1.5" PointX="15" PointY="88.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.grupos_acesso" Width="1.5" PointX="1.5" PointY="72.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.grupos_acesso_telas_sistema" Width="1.5" PointX="6.75" PointY="72.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.historico_inscricao" Width="1.5" PointX="9" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.inadimplentes" Width="1.5" PointX="3" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.matricula" Width="1.5" PointX="6" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.matricula_disciplina_outra_instituicao" Width="1.5" PointX="3" PointY="45.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.matricula_oferecimento" Width="1.5" PointX="3" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.matricula_oferecimento_outro_curso" Width="1.5" PointX="5.25" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.matricula_turma_orientacao" Width="1.5" PointX="14.25" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.notas" Width="1.5" PointX="6" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.oferecimentos_professores" Width="1.5" PointX="19.25" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.periodo_inscricao" Width="1.5" PointX="4.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.periodo_inscricao_curso" Width="1.5" PointX="4.5" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.periodo_matricula" Width="1.5" PointX="3.75" PointY="72" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.periodo_relatorio_dissertacao" Width="1.5" PointX="14.25" PointY="43.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.pre_oferecimentos" Width="1.5" PointX="11.25" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.presenca" Width="1.5" PointX="6" PointY="46" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.presenca_professor" Width="1.5" PointX="14.25" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.professor_data_recalculo" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.professor_plano" Width="1.5" PointX="14.25" PointY="74.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.professor_planoOld" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.professor_solicitacao_pagamento" Width="1.5" PointX="14.25" PointY="77.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.quadrimestres" Width="1.5" PointX="4.5" PointY="101.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.relatorio_dissertacao" Width="1.5" PointX="16.5" PointY="45.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.salas_aula" Width="1.5" PointX="1.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.titulacao" Width="1.5" PointX="9.75" PointY="61.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.turmas_coordenadores" Width="1.5" PointX="17.25" PointY="81.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.turmas_disciplinas" Width="1.5" PointX="9" PointY="57.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.Cidade" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.Estado" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.historico_notas" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.menu_config" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.Pais" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.professor_fornecedor" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.professor_solicitacao_planoOld" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.vw_disciplinas_historico" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.oferecimentos" Width="1.5" PointX="0.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.refTran" Width="1.5" PointX="6.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.Enderecos" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.forma_recebimento" Width="1.5" PointX="9.75" PointY="64" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.professores_forma_recebimento" Width="1.5" PointX="17.25" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.dados_contratos" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.prorrogacao" Width="1.5" PointX="9" PointY="41" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.tipo_reuniao_cpg" Width="1.5" PointX="6.75" PointY="50.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.areas_concentracao" Width="1.5" PointX="6.75" PointY="56.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.boletos" Width="1.5" PointX="4.5" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.novidadesSistema" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.monitor_letreiro" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.monitor" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.professor_solicitacao_plano" Width="1.5" PointX="16.5" PointY="76.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.professor_observacoes_plano" Width="1.5" PointX="14.25" PointY="85.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.arquivos" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.fichas_inscricao" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.disciplinas" Width="1.5" PointX="1.5" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.vw_historico" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.Configuracoes" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.telas_sistema" Width="1.5" PointX="4.5" PointY="115.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.documentos_academicos_obs" Width="1.5" PointX="6.75" PointY="110.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.documentos_academicos" Width="1.5" PointX="4.5" PointY="108.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.usuarios" Width="1.5" PointX="0.75" PointY="63.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.professores" Width="1.5" PointX="12" PointY="57.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos" Width="1.5" PointX="0.75" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.datas_aulas_professor" Width="1.5" PointX="17.25" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.cursos_disciplinas" Width="1.5" PointX="11.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.historico_matricula_turma" Width="1.5" PointX="11.25" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_arquivos" Width="1.5" PointX="9" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_arquivos_tipo" Width="1.5" PointX="6.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.tipos_curso" Width="1.5" PointX="2.25" PointY="54.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.banca_dissertacao_obs" Width="1.5" PointX="18.75" PointY="52.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.usuarios_log" Width="1.5" PointX="3" PointY="89" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.cursos" Width="1.5" PointX="4.5" PointY="53" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_dataLimite_documentos_pendentes" Width="1.5" PointX="3" PointY="68.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.certificados_participantes" Width="1.5" PointX="10.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.turmas" Width="1.5" PointX="6.75" PointY="100.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.matricula_turma" Width="1.5" PointX="9" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.banca_dissertacao" Width="1.5" PointX="16.5" PointY="50.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.tipo_dissertacao" Width="1.5" PointX="14.25" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_curso_inadimplente" Width="1.5" PointX="5.25" PointY="77.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_parcelas_inadimplente" Width="1.5" PointX="7.5" PointY="77.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_inadimpentes_fipt" Width="1.5" PointX="3" PointY="77.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_inadimplentes_emails_enviados" Width="1.5" PointX="3" PointY="81.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.certificado_tipo_curso" Width="1.5" PointX="5.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.cursos_coordenadores" Width="1.5" PointX="17.25" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.curso_valor_coordenacao" Width="1.5" PointX="20.25" PointY="60.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.curso_tipo_coordenador" Width="1.5" PointX="15" PointY="67.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.certificados" Width="1.5" PointX="8" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.banca" Width="1.5" PointX="11.25" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_boletos" Width="1.5" PointX="3" PointY="84.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_boletos_curso" Width="1.5" PointX="5.25" PointY="85.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_boletos_parcelas" Width="1.5" PointX="7.5" PointY="84.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_cadastro_automatico_det" Width="1.5" PointX="6" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.alunos_cadastro_automatico" Width="1.5" PointX="3.75" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.monitor_video" Width="1.5" PointX="11.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.feriado" Width="1.5" PointX="16.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="serpi_homologModel.boleto_email" Width="1.5" PointX="3" PointY="92.625" IsExpanded="true" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_disciplina_outra_instituicao_conceitos_de_aprovacao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_notas_conceitos_de_aprovacao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_curso_valor_hora_titulacao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_datas_aulas_salas_aula" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_presenca_professor_datas_aulas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_presencas_datas_aulas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_grupos_acesso_telas_sistema_grupos_acesso" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_periodo_matricula" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_aprovacao_matricula_oferecimento_matricula_oferecimento" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_relatorio_dissertacao_matricula_turma_orientacao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_periodo_inscricao_curso_periodo_inscricao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_pre_oferecimentos_periodo_matricula" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_relatorio_dissertacao_periodo_relatorio_dissertacao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_145" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.matricula_pre_oferecimentos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_datas_aulas_oferecimentos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_oferecimento_oferecimentos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_notas_oferecimentos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_oferecimentos_professores_oferecimentos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_presenca_professor_oferecimentos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_presencas_oferecimentos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_147" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_curso_valor_hora_forma_recebimento" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_Table_1_forma_recebimento_banca" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_Table_1_forma_recebimento_horas_aula" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_Table_1_forma_recebimento_orientacao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_144" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_155" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_areas_concentracao_coordenadores_areas_concentracao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_areas_concentracao_disciplinas_areas_concentracao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_152" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_professor_solicitacao_plano_professor_plano" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_professor_solicitacao_plano_professor_solicitacao_pagamento" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_fichas_inscricao_periodo_inscricao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_fichas_inscricao_periodo_inscricao_curso" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_inscricao_historico_fichas_inscricao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.inscricao_boleto" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_disciplinas_areas_concentracao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_areas_concentracao_disciplinas_disciplinas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_disciplinas_disciplinas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_disciplinas_pre_oferecimentos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_disciplinas_professores_disciplinas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_disciplinas_requisitos_disciplinas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_disciplinas_requisitos_disciplinas1" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_disciplina_outra_instituicao_disciplinas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_oferecimentos_disciplinas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_turmas_disciplinas_disciplinas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_grupos_acesso_telas_sistema_telas_sistema" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_159" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_atualizacaoEndereco_usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_usuarios_grupos_acesso" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_areas_concentracao_coordenadores_professores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_banca_professores_professores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_disciplinas_professores_professores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_professores_forma_recebimento" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_turma_orientacao_professores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_oferecimentos_professores_professores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_presenca_professor" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_professor_observacoes_plano_professores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_professor_plano_professor_plano" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_professor_solicitacao_pagamento_professores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_professores_forma_recebimento_professores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_professores_professores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_turmas_coodernadores_coordenadores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.alunos_inadimplentes_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_atualizacaoEndereco_alunos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_alunos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_disciplina_outra_instituicao_alunos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_oferecimento_aluno" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_notas_alunos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_presencas_alunos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_prorrogacao_alunos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_datas_aulas_professor_datas_aulas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_data_aula_professor_professores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_cursos_disciplinas_disciplinas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_154" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_160" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_162" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_157" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_158" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_149" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_169" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_areas_concentracao_cursos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_curso_valor_banca_cursos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_curso_valor_hora_cursos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_curso_valor_orientacao_cursos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_cursos_disciplinas_cursos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_cursos_tipos_curso" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_ficha_inscricao_cursos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_periodo_inscricao_curso_cursos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_171" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_turmas_cursos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_turmas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_oferecimento_turmas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_146" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_turmas_coodernadores_turmas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_turmas_disciplinas_turmas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_turma_alunos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_161" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_turma_areas_concentracao" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_historico_matricula_turma_matricula_turma" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_turma_orientacao_matricula_turma" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_matricula_turma_turmas" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_153" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.ficha_inscricao_matricula" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_163" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_172" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_175" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_173" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_174" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_176" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_cursos_coodernadores_cursos" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_cursos_coodernadores_coordenadores" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_179" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_178" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_180" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_177" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_170" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.FK_banca_matricula_turma" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_136" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_156" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_181" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_182" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_183" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_187" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_186" ManuallyRouted="false" />
+        <AssociationConnector Association="serpi_homologModel.R_189" ManuallyRouted="false" />
+      </Diagram>
+    </Diagrams>
   </Designer>
 </edmx:Edmx>
