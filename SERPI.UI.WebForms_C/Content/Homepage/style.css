@@ -1,0 +1,48 @@
+h4{
+	margin-top: 6px;
+	text-align: center;
+}
+#filtro select, #filtro select:focus{
+	background-color: #005c8f;
+	color: #FFFFFF;
+}
+.box-options-filter{
+	padding: 0px 4px 15px 0px !important;
+}
+.tile{
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+#lista-areas .tile{
+	background-color: #dadada;
+}
+.tile__arrow {
+	bottom: 15px;
+}
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.tile--style-2 .tile__title {
+    margin-top: 10px !important;
+}
+.about-article-fluid{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.titulo-cursos-mais-procurados{
+	font-size: 16px;
+	line-height: 20px;
+	text-align: left;
+}
+.alinhamento-esquerda{
+	text-align: left !important;
+}
+.blockquote-author__photo{
+	max-width: 200px;
+	max-height: 200px;
+}

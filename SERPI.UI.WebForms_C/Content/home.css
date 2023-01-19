@@ -1,0 +1,156 @@
+body {
+    font-family: Tahoma;
+}
+
+.logoConectcon {
+    display: block;
+    padding: 15px 15px;
+}
+
+.preto {
+    color: #000 !important;
+}
+
+    .preto:hover {
+        text-decoration: double;
+    }
+
+/*label {
+    display: block;
+    margin-top: 3px;
+}*/
+
+label.error {
+    position: absolute;
+    display: block;
+    white-space: pre-line;
+    color: red;
+    margin-top: 0;
+    font-size: x-small;
+}
+
+
+.submit {
+    margin-top: 1em;
+}
+
+em {
+    font-weight: bold;
+    padding-right: 1em;
+    vertical-align: top;
+}
+
+img.bg {
+	background-color:#fff;
+    position: absolute;
+    display: flexbox;
+    top: 13%;
+    left: 3%;
+    float:right;
+    width: 95%;
+    right:55px;
+}
+
+img.bgOld {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo-condoadm {
+    opacity: 0.9;
+    position: absolute;
+    display: flexbox;
+    top: 12%;
+    left: 3%;
+    padding: 10px;
+    background: white;
+    -moz-box-shadow: 0 0 20px black;
+    -webkit-box-shadow: 0 0 20px black;
+    box-shadow: 0 0 20px black;
+    border-radius: 3px;
+    color: #000;
+    font-size: 11px;
+    text-align: right;
+}
+
+.adm {
+    height: 70px;
+}
+
+
+.condo {
+    width: 100%;
+}
+
+.account-box {
+    border: 2px solid #000;
+    border-radius: 2px;
+    -moz-box-shadow: 0 0 20px black;
+    -webkit-box-shadow: 0 0 20px black;
+    box-shadow: 0 0 20px black;
+    z-index: 3;
+    font-size: 13px !important;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #ffffff;
+    padding: 5px 20px 10px 20px;
+}
+
+.logo {
+    text-align: center;
+    margin: 10px 0px 27px 40px;
+    background-position: 0px -4px;
+    position: relative;
+}
+
+footer span {
+    display: block;
+    margin: 17px 0 0 0;
+    font-size: 11px;
+}
+
+footer a {
+    display: block;
+    font-size: 11px;
+    color: #000 !important;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+    img.bg {
+        left: 50%;
+        margin-left: -512px; /*50%*/
+    }
+
+    .logo-condoadm {
+        position: absolute;
+        display: flexbox;
+        top: 20%;
+        left: 10%;
+        padding: 5px;
+        background: white;
+        -moz-box-shadow: 0 0 20px black;
+        -webkit-box-shadow: 0 0 20px black;
+        box-shadow: 0 0 20px black;
+        border-radius: 3px;
+        color: #000;
+        font-size: 9px;
+        text-align: right;
+    }
+
+    .adm {
+        width: 30%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .condo {
+        width: 70%;
+        text-align: center;
+    }
+}

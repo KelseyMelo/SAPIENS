@@ -1,0 +1,96 @@
+.step a{
+    color:#015D8D;
+}
+
+.align-center, .center-align, .checkout-steps .step {
+    text-align: center;
+}
+.checkout-steps {
+    margin: 10px 0px 20px 0px;
+    padding: 30px 0px 70px;
+    position: relative;
+}
+.checkout-steps::after, .checkout-steps::before {
+    content: "";
+    height: 8px;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+.checkout-steps::before {
+    background: rgba(0, 0, 0, 0) radial-gradient(ellipse farthest-side at center bottom , rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)) repeat scroll 0 0;
+    top: 0;
+}
+.checkout-steps::after {
+    background: rgba(0, 0, 0, 0) radial-gradient(ellipse farthest-side at center top , rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)) repeat scroll 0 0;
+    bottom: 0;
+}
+.checkout-steps .step {
+    float: left;
+    position: relative;
+    width: 25%;
+}
+.checkout-steps .step::before {
+    background: #e6e6e6 none repeat scroll 0 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    z-index: 0;
+}
+.checkout-steps .step:first-of-type::before {
+    left: 50%;
+}
+.checkout-steps .step:last-of-type::before {
+    right: 50%;
+}
+.checkout-steps .step.active:last-of-type::before, .checkout-steps .step.done:last-of-type::before {
+    background: #015D8D none repeat scroll 0 0;
+}
+.checkout-steps .step.active .step-badge, .checkout-steps .step.done .step-badge {
+    background-color: #015D8D;
+    color: #fff;
+}
+.checkout-steps .step.active {
+    color: #34353e;
+}
+.checkout-steps .step.active::before {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(left center , #00becc 0%, #00becc 50%, #e6e6e6 50%, #e6e6e6 100%) repeat scroll 0 0;
+}
+.checkout-steps .step.active:first-of-type::before {
+    background: #e6e6e6 none repeat scroll 0 0;
+}
+.checkout-steps .step.done::before {
+    background: #00becc none repeat scroll 0 0;
+}
+.checkout-steps .step.done:first-of-type::before {
+    background: #00becc none repeat scroll 0 0;
+}
+.checkout-steps .step-badge {
+    background-color: #e6e6e6;
+    border-radius: 99px;
+    height: 22px;
+    line-height: 22px;
+    margin: 0 auto 5px;
+    position: relative;
+    width: 22px;
+    z-index: 1;
+    color:#333;
+    font-weight: bold;
+}
+.checkout-steps .step.active::before {
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, #015D8D 0%, #015D8D 50%, #e6e6e6 50%, #e6e6e6 100%) repeat scroll 0 0;
+}
+.checkout-steps .step.done:first-of-type::before {
+    background: #015D8D none repeat scroll 0 0;
+}
+.checkout-steps .step.done::before {
+    background: #015D8D none repeat scroll 0 0;
+}
+@media not all {
+    input[type="radio"] {
+        transform: scale(0.5);
+    }
+}

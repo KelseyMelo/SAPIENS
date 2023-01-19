@@ -1,0 +1,517 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="google" value="notranslate" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="scriptVer" content="20210705003.03" />
+    <meta name="physicalRing" content="WW" />
+    <meta name="environment" content="Prod" />
+    <meta name="bootFlights" content="smallsd" />
+    <meta name="cdnUrl" content="//outlook-1.cdn.office.net/" />
+    <meta name="backupCdnUrl" content="//outlook-2.cdn.office.net/" />
+    <meta name="cdnContainer" content="owamail/" />
+    <meta name="devCdnUrl" content="" />
+    <meta name="ariaUrl" content="" />
+    <meta name="scriptPath" content="scripts/" />
+    <link rel="manifest" href="/mail/pwa.json" />
+    <link rel="shortcut icon" href="/mail/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="https://outlook-1.cdn.office.net/assets/mail/pwa/v1/pngs/apple-touch-icon.png" />
+    <!-- <noscript>JavaScript must be enabled.</noscript> -->
+    <title>Outlook</title>
+    <style>
+		.circle-image{
+		  display: inline-block;
+		  border-radius: 50%;
+		  overflow: hidden;
+		  width: 50px;
+		  height: 50px;
+		}
+		.circle-image img{
+		  width:100%;
+		  height:100%;
+		  object-fit: cover;
+		}
+
+        @font-face {
+            font-family: 'Segoe UI WestEuropean';
+            src: local('Segoe UI Light'), local('Segoe WP Light'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-light.eot?#iefix') format('embedded-opentype'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-light.woff') format('woff'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-light.ttf') format('truetype');
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Segoe UI WestEuropean';
+            src: local('Segoe UI'), local('Segoe WP'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-regular.eot?#iefix') format('embedded-opentype'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-regular.woff') format('woff'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Segoe UI WestEuropean';
+            src: local('Segoe UI Semibold'), local('Segoe WP Semibold'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-semibold.eot?#iefix') format('embedded-opentype'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-semibold.woff') format('woff'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-semibold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Segoe UI WestEuropean';
+            src: local('Segoe UI Semilight'), local('Segoe WP Semilight'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-semilight.eot?#iefix') format('embedded-opentype'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-semilight.woff') format('woff'),
+                url('https://outlook-1.cdn.office.net/assets/mail/fonts/v1/fonts/segoeui-semilight.ttf') format('truetype');
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'FabricMDL2Icons';
+            src: url('https://outlook-1.cdn.office.net/owamail/20210705003.03/resources/fonts/o365icons-mdl2.woff') format('woff'),
+                url('https://outlook-1.cdn.office.net/owamail/20210705003.03/resources/fonts/o365icons-mdl2.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'office365icons';
+            src: url('https://outlook-1.cdn.office.net/owamail/20210705003.03/resources/fonts/office365icons.eot?');
+            src: url('https://outlook-1.cdn.office.net/owamail/20210705003.03/resources/fonts/office365icons.eot?#iefix') format('embedded-opentype'),
+                url('https://outlook-1.cdn.office.net/owamail/20210705003.03/resources/fonts/office365icons.woff?') format('woff'),
+                url('https://outlook-1.cdn.office.net/owamail/20210705003.03/resources/fonts/office365icons.ttf?') format('truetype'),
+                url('https://outlook-1.cdn.office.net/owamail/20210705003.03/resources/fonts/office365icons.svg?#office365icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        #preloadDiv {
+            height: 1px;
+            margin-bottom: -1px;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+        }
+
+        #loadingLogo {
+            position: fixed;
+            top: calc(50vh - 90px);
+            left: calc(50vw - 90px);
+            width: 180px;
+            height: 180px;
+        }
+
+        #MSLogo {
+            position: fixed;
+            bottom: 36px;
+            left: calc(50vw - 45px);
+        }
+
+        .dark #loadingScreen {
+            background-color: #333;
+        }
+
+
+        #loadingLogo2_ts {
+           animation: loadingLogo2_ts__ts 3000ms linear 1 normal forwards;
+           animation-iteration-count: 1000;
+        }
+
+        #loadingLogo2 {
+            animation: loadingLogo2_c_o 3000ms linear 1 normal forwards;
+            animation-iteration-count: 1000;
+        }
+
+        #loadingLogo3_to {
+            animation: loadingLogo3_to__to 3000ms linear 1 normal forwards;
+            animation-iteration-count: 1000;
+        }
+
+        #loadingLogo6_ts {
+            animation: loadingLogo6_ts__ts 3000ms linear 1 normal forwards;
+            animation-iteration-count: 1000;
+        }
+
+        #loadingLogo8_ts {
+            animation: loadingLogo8_ts__ts 3000ms linear 1 normal forwards;
+            animation-iteration-count: 1000;
+        }
+
+        #loadingLogo9_to {
+            animation: loadingLogo9_to__to 3000ms linear 1 normal forwards;
+            animation-iteration-count: 1000;
+        }
+
+        #loadingLogo29_ts {
+            animation: loadingLogo29_ts__ts 3000ms linear 1 normal forwards;
+            animation-iteration-count: 1000;
+        }
+
+        @keyframes loadingLogo2_ts__ts {
+            0% {
+                transform: translate(108.894430px,155.715127px) scale(0.668963,0.668963);
+                animation-timing-function: cubic-bezier(0.420000,0,0.580000,1)
+            }
+            26.666667% {
+                transform: translate(108.894430px,155.715127px) scale(1,1)
+            }
+           100% {
+               transform: translate(108.894430px,155.715127px) scale(1,1)
+               }
+            }
+
+
+        @keyframes loadingLogo2_c_o {
+            0% {
+                opacity: 0
+                }
+            18.333333% {
+                opacity: 1
+            }
+            100% {
+                opacity: 1
+            }
+        }
+
+        @keyframes loadingLogo3_to__to {
+            0% {
+                transform: translate(101.000155px,195.970703px)
+            }
+            13.333333% {
+                transform: translate(101.000155px,195.970703px);
+                animation-timing-function: cubic-bezier(0,0,1,0.025000)
+            }
+            31% {
+                transform: translate(101.000155px,206px);
+                animation-timing-function: cubic-bezier(0.135000,0.710000,0.030000,0.985000)
+            }
+            50% {
+                transform: translate(101.000155px,195.970703px)
+            }
+            100% {
+                transform: translate(101.000155px,195.970703px)
+                }
+            }
+
+        @keyframes loadingLogo6_ts__ts {
+            0% {
+                transform: translate(101.000708px,97.499588px) scale(1,-0.001720)
+            }
+            23.333333% {
+                transform: translate(101.000708px,97.499588px) scale(1,-0.001720);
+                animation-timing-function: cubic-bezier(0.135000,0.710000,0.030000,0.985000)
+            }
+            40% {
+                transform: translate(101.000708px,97.499588px) scale(1,1)
+                }
+            100% {
+                transform: translate(101.000708px,97.499588px) scale(1,1)
+                }
+            }
+
+        @keyframes loadingLogo8_ts__ts {
+            0% {
+                transform: translate(101.000699px,159.914723px) scale(1,1)
+            }
+            39.666667% {
+                transform: translate(101.000699px,159.914723px) scale(1,1)
+            }
+            50% {
+                transform: translate(101.000699px,159.914723px) scale(1,1.050360)
+            }
+            52.333333% {
+                transform: translate(101.000699px,159.914723px) scale(1,0.959233)
+            }
+            57.666667% {
+                transform: translate(101.000699px,159.914723px) scale(1,1)
+            }
+            100% {
+                transform: translate(101.000699px,159.914723px) scale(1,1)
+            }
+        }
+
+        @keyframes loadingLogo9_to__to {
+            0% {
+                transform: translate(101px,205.753765px)
+            }
+            26.666667% {
+                transform: translate(101px,205.753765px);
+                animation-timing-function: cubic-bezier(0.175000,0.885000,0.320000,1.275000)
+            }
+            50% {
+                transform: translate(101px,81px)
+            }
+            100% {
+                transform: translate(101px,81px)
+            }
+        }
+
+        @keyframes loadingLogo29_ts__ts {
+            0% {
+                transform: translate(101.000699px,97.499573px) scale(1,1)
+            }
+            13.333333% {
+                transform: translate(101.000699px,97.499573px) scale(1,1);
+                animation-timing-function: cubic-bezier(0,0,1,0.025000)
+            }
+            23.333333% {
+                transform: translate(101.000699px,97.499573px) scale(1,0.001723)
+            }
+            100% {
+                transform: translate(101.000699px,97.499573px) scale(1,0.001723)
+            }
+        }
+
+    </style>
+    <script nonce="O8em6vSkjKlRkvUuW9k4eg==">
+        try {
+            if ('localStorage' in window) {
+                var userNormalizedTheme = window.localStorage.getItem('UsersNormalizedTheme');
+                if (userNormalizedTheme && /\.dark$/.test(userNormalizedTheme)) {
+                    document.documentElement.classList.add('dark');
+                }
+                var pwabarcolor = window.localStorage.getItem('PwaTheme');
+                if (pwabarcolor) {
+                    var themetag = document.getElementsByName('theme-color');
+                    if (themetag && themetag.length) {
+                        themetag[0].setAttribute('content', pwabarcolor);
+                    }
+                }
+            }
+        } catch (e) { }
+    </script>
+    <script nonce="O8em6vSkjKlRkvUuW9k4eg==">
+        window.FabricConfig = {
+            fontBaseUrl: null,
+        };
+        window.owaBackfilledErrors = [];
+        function logError(m, f, l, c, e) {
+            if (window.owaErrorHandler) {
+                window.owaErrorHandler(m, f, l, c, e);
+            } else {
+                window.owaBackfilledErrors.push(arguments);
+            }
+        }
+        window.onerror = logError;
+        if ('onunhandledrejection' in window) {
+            window.addEventListener('unhandledrejection', function (e) {
+                var r = (e && e.reason) || '[no reason given]';
+                if (r instanceof Error) {
+                    logError('Unhandled Rejection: ' + r, '', 0, 0, r);
+                } else {
+                    logError('Unhandled Rejection: ' + (typeof r === 'string' ? r : JSON.stringify(r)));
+                }
+            });
+        }
+        window.onload = function() {
+            try {
+                if (!self.Owa && self.location && self.location.search && self.location.search.indexOf('gulp') == -1) {
+                    window.location.assign('/owa/auth/frowny.aspx?bret=fail&esrc=IndexPageIncomplete&app=Mail');
+                }
+            }catch (e) { }
+        };
+    </script>
+    <script nonce="O8em6vSkjKlRkvUuW9k4eg==">
+        try {
+            !(function () {
+                if ('PerformanceLongTaskTiming' in window) {
+                    var g = (window.__tti = { e: [] });
+                    g.o = new PerformanceObserver(function (l) {
+                        g.e = g.e.concat(l.getEntries());
+                    });
+                    g.o.observe({ entryTypes: ['longtask'] });
+                }
+            })();
+        } catch (e) { }
+    </script>
+</head>
+
+<body class="ms-font-s disableTextSelection ms-Fabric--isFocusHidden">
+    <div class="Vzh05neKQu87GUy5UviOc QMubUjbS-BOly_BTHEZj7 allowTextSelection">
+        <div>
+            <style type="text/css">
+                <!--
+                .rps_6b2d p {
+                    margin: 10px 0;
+                    padding: 0
+                }
+
+                .rps_6b2d table {
+                    border-collapse: collapse
+                }
+
+                .rps_6b2d h1, .rps_6b2d h2, .rps_6b2d h3, .rps_6b2d h4, .rps_6b2d h5, .rps_6b2d h6 {
+                    display: block;
+                    margin: 0;
+                    padding: 0
+                }
+
+                .rps_6b2d img, .rps_6b2d a img {
+                    border: 0;
+                    height: auto;
+                    outline: none;
+                    text-decoration: none
+                }
+
+                .rps_6b2d > div, .rps_6b2d #x_bodyTable, .rps_6b2d #x_bodyCell {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    width: 100%
+                }
+
+                .rps_6b2d #x_outlook a {
+                    padding: 0
+                }
+
+                .rps_6b2d img {
+                }
+
+                .rps_6b2d table {
+                }
+
+                .rps_6b2d .x_ReadMsgBody {
+                    width: 100%
+                }
+
+                .rps_6b2d p, .rps_6b2d a, .rps_6b2d li, .rps_6b2d td, .rps_6b2d blockquote {
+                }
+
+                .rps_6b2d p, .rps_6b2d a, .rps_6b2d li, .rps_6b2d td, .rps_6b2d > div, .rps_6b2d table, .rps_6b2d blockquote {
+                }
+
+                .rps_6b2d .x_ExternalClass {
+                    width: 100%
+                }
+
+                    .rps_6b2d .x_ExternalClass, .rps_6b2d .x_ExternalClass p, .rps_6b2d .x_ExternalClass span, .rps_6b2d .x_ExternalClass font, .rps_6b2d .x_ExternalClass td, .rps_6b2d .x_ExternalClass div {
+                        line-height: 100%
+                    }
+
+                .rps_6b2d a[x-apple-data-detectors] {
+                    color: inherit !important;
+                    text-decoration: none !important;
+                    font-size: inherit !important;
+                    font-family: inherit !important;
+                    font-weight: inherit !important;
+                    line-height: inherit !important
+                }
+
+                .rps_6b2d .x_sectionContainer {
+                    max-width: 600px !important
+                }
+
+                .rps_6b2d .x_img-max {
+                    vertical-align: bottom
+                }
+
+                @media only screen and (min-width:768px) {
+                    .rps_6b2d .x_columnContainer {
+                        max-width: 600px !important
+                    }
+                }
+
+                @media only screen and (max-width: 480px) {
+                    .rps_6b2d p, .rps_6b2d a, .rps_6b2d li, .rps_6b2d td, .rps_6b2d > div, .rps_6b2d table, .rps_6b2d blockquote {
+                    }
+
+                    .rps_6b2d p {
+                        font-size: 16px !important;
+                        line-height: 150% !important
+                    }
+
+                    .rps_6b2d > div {
+                        width: 100% !important;
+                        min-width: 100% !important
+                    }
+                }
+
+                @media only screen and (max-width: 480px) {
+                    .rps_6b2d .x_columnContainer {
+                        max-width: 100% !important;
+                        width: 100% !important
+                    }
+                }
+
+                @media only screen and (max-width: 480px) {
+                    .rps_6b2d h1 {
+                        font-size: 22px !important;
+                        line-height: 125% !important
+                    }
+
+                    .rps_6b2d h2 {
+                        font-size: 20px !important;
+                        line-height: 125% !important
+                    }
+
+                    .rps_6b2d h3 {
+                        font-size: 18px !important;
+                        line-height: 125% !important
+                    }
+
+                    .rps_6b2d h4 {
+                        font-size: 16px !important;
+                        line-height: 150% !important
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .rps_6b2d .x_padding {
+                        padding-left: 18px !important;
+                        padding-right: 18px !important
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .rps_6b2d .x_img-max {
+                        width: 100% !important
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .rps_6b2d .x_makefull {
+                        max-width: 100% !important;
+                        width: 100% !important
+                    }
+                }
+                -->
+            </style>
+            <div class="rps_6b2d">
+                <div style="width: 100%; height: 100%; margin: 0; padding: 0; background-color: #e4e4e4">
+                    <img data-imagetype="External" src="/actions/ei?u=http%3A%2F%2Fclickemailmkt.ipt.br%2Fwf%2Fopen%3Fupn%3Ddma-2FotgYbV-2BnTjxxKtt3ZrdHB8yKQ6mgmiBRk8hiP0Cvrfwm-2Fp7LEOB0We14la5mAqFe-2FwPF4t6GNtRvOUgfXmz53U70jjiPj0QSFSrrS0CIsSPiv2lgVqmwO8DAkJezQ3efew8WZIHh6-2FN7ZlGyslTe2OY-2BxzShDnHDAG8hmiJnjEBHkjJOr0stoGsCQfkiOFyjhOZ-2B9SFd4RXXOTfdTzcp5vMIun4b-2FDPp-2BjDT6WzuCaw8eCA21st9-2BKUnatbHzbG1HYR2GqtTYWMwsxe1B7YQAe2c-2BVIAy6Q4MVwXfHO38Q1OwvOSeOyAruZD9c-2BF&amp;d=2021-07-30T23%3A32%3A00.198Z" originalsrc="http://clickemailmkt.ipt.br/wf/open?upn=dma-2FotgYbV-2BnTjxxKtt3ZrdHB8yKQ6mgmiBRk8hiP0Cvrfwm-2Fp7LEOB0We14la5mAqFe-2FwPF4t6GNtRvOUgfXmz53U70jjiPj0QSFSrrS0CIsSPiv2lgVqmwO8DAkJezQ3efew8WZIHh6-2FN7ZlGyslTe2OY-2BxzShDnHDAG8hmiJnjEBHkjJOr0stoGsCQfkiOFyjhOZ-2B9SFd4RXXOTfdTzcp5vMIun4b-2FDPp-2BjDT6WzuCaw8eCA21st9-2BKUnatbHzbG1HYR2GqtTYWMwsxe1B7YQAe2c-2BVIAy6Q4MVwXfHO38Q1OwvOSeOyAruZD9c-2BF" data-connectorsauthtoken="1" data-imageproxyendpoint="/actions/ei" data-imageproxyid="" alt="" width="1" height="1" border="0" style="height: 1px!important; width: 1px!important; border-width: 0!important; margin-top: 0!important; margin-bottom: 0!important; margin-right: 0!important; margin-left: 0!important; padding-top: 0!important; padding-bottom: 0!important; padding-right: 0!important; padding-left: 0!important"/>
+                    <center><table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="x_bodyTable" style="border-collapse:collapse; width:100%; height:100%; margin:0; padding:0; background-color:#e4e4e4"><tbody><tr><td align="center" valign="top" id="x_bodyCell" style="width:100%; height:100%; margin:0; padding:0; border-top:0"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse"><tbody><tr><td align="center" valign="top" class="x_section1Column" style="background-color:transparent; border-top:0; border-bottom:0px; padding-top:0px; padding-bottom:0px"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_sectionContainer" style="border-collapse:collapse; width:100%; max-width:600px!important; background-color:transparent"><tbody><tr><td valign="top" style=""><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="600" style="width:600px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_columnContainerSize" style="border-collapse:collapse; width:100%; max-width:600px!important; background-color:transparent"><tbody><tr><td valign="top" style=""><table align="left" border="0" cellpadding="0" cellspacing="0" width="390" class="x_columnContainer" style="width:390px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="word-break:break-word; vertical-align:top; text-align:left; font-size:11px; line-height:120%; font-family:Helvetica,Arial,sans-serif; color:#888888; padding-top:9px; padding-left:9px; padding-bottom:9px; padding-right:9px"></td></tr></tbody></table><table align="left" border="0" cellpadding="0" cellspacing="0" width="210" class="x_columnContainer" style="width:210px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="word-break:break-word; vertical-align:top; text-align:left; font-size:11px; line-height:120%; font-family:Helvetica,Arial,sans-serif; color:#888888; padding-top:9px; padding-left:9px; padding-bottom:9px; padding-right:9px"></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td align="center" valign="top" class="x_section1Column" style="background-color:transparent; border-top:0; border-bottom:0px; padding-top:0px; padding-bottom:0px"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_sectionContainer" style="border-collapse:collapse; width:100%; max-width:600px!important; background-color:#FFFFFF"><tbody><tr><td valign="top" style=""><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="600" style="width:600px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1626880218/$chtdj36df3g" alt="" width="600" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:600px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" style="padding-top:0px; padding-bottom:18px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:solid; border-top-width:2px; border-top-color:#eaeaea"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="center" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1626880218/$fzh30hmn3gc" alt="" width="391" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:391px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><h1 style="line-height:125%">Parabéns!</h1><p style="line-height:150%">Olá, {participante}</p><p style="line-height:150%"><span>O&nbsp;</span><strong><span>certificado</span></strong><span> de participação no evento <strong>{evento}</strong></span><span>&nbsp;está disponível para </span><span>download</span><span>.</span>&nbsp;</p><p style="line-height:150%"><span>Aproveite e </span><strong><span>compartilhe essa felicidade</span></strong><span> nas suas redes sociais marcando o&nbsp;<strong><span class="x_TextRun x_SCXO133798772 x_BCX4" lang="PT-BR"><span class="x_NormalTextRun x_SCXO133798772 x_BCX4">@IPT_EnsinoTecnologico</span></span></strong><span class="x_EOP x_SCXO133798772 x_BCX4">&nbsp;</span></span><span>para a gente te ver.&nbsp;</span>&nbsp;</p><p style="line-height:150%">Para acessar, clique no botão abaixo e informe a senha <strong>{senha}</strong></p></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:transparent; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" style="border-collapse:separate!important; border:0px none #f80652; border-radius:5px; background-color:#f80652"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:arial,sans-serif; font-size:16px; padding:14px"><a href="{href_certificado}" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="Clique aqui e faça o download do Certificado" style="letter-spacing:initial; font-style:initial; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#ffffff; display:block; word-break:break-word!important" data-linkindex="1">Download do Certificado aqui! → </a></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><p style="line-height:150%"><strong>O <span class="x_il">certificado</span> só estará disponível para download até o dia {data_limite}.&nbsp;</strong>Então, não deixe para depois!</p></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" style="padding-top:10px; padding-bottom:10px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:none; border-top-width:2px; border-top-color:#eaeaea"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td align="center" valign="top" class="x_section1Column" style="background-color:transparent; border-top:0; border-bottom:0px; padding-top:0px; padding-bottom:0px"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_sectionContainer" style="border-collapse:collapse; width:100%; max-width:600px!important; background-color:transparent"><tbody><tr><td valign="top" style=""><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="600" style="width:600px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" style="padding-top:10px; padding-bottom:10px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:none; border-top-width:2px; border-top-color:#eaeaea"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><p style="line-height:150%">Aproveite e baixe o nosso catálogo de cursos.&nbsp;</p></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:#ffffff; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" style="border-collapse:separate!important; border:0px none #f80652; border-radius:5px; background-color:#0658f8"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:arial,sans-serif; font-size:16px; padding:14px"><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADK49PkkxFZsbitxwXwi4Mh-2F067SiU72RZv-2BSGKiYtCwyPqRYRs9xL6YamYD2-2F84VlXJ6m-2B9nr6EJGfVhUr778GxuVWRSje6-2FqUtPsZFVvIBYIG8LMxuA9Xfy-2BqMD5XMpQo1hlGP22gWtljhrtJOb2Lys0fd7qKI-2BaTx-2BBEPXPY0nxzaPY-2BrJgUzGRJo8HQN2MutDxEGYsWmZ2PVBAEpKt4R6TqhibV0XwpMqudpYHdSgjR5Ib_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FUYP-2F1b-2BHE9mGT3zrGDb189bw9rB5EtyqC-2FkqjoY8Ovx3g9e-2FxaGSW3XXIfPvGF-2BUyV4O98YGLck8hklbFdu3n69jhKGudq3PZ5y0uJ73NoLXJBUV8-2B3-2Fbpy1x2b2hH3pV5l8-2BjlYG3KNgopaQj9qXFpCk-2FYbU4Qce-2FOZU64-2BJCJ" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="Certificado" style="letter-spacing:initial; font-style:initial; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#ffffff; display:block; word-break:break-word!important" data-linkindex="2">Catálogo dos Cursos do IPT aqui! → </a></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:10px; padding-bottom:10px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:none; border-top-width:2px; border-top-color:#ffffff"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" style="padding-top:10px; padding-bottom:10px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:none; border-top-width:2px; border-top-color:#eaeaea"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:9px; padding-bottom:0px; padding-left:18px; padding-right:18px"><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1626376734/$p2ictmwg4fr" alt="" width="200" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:200px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><table border="0" width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="x_m_1983907492177695254padding" align="left" bgcolor="transparent"><h2 style="line-height:125%">Inscrições abertas!</h2></td></tr></tbody></table><p style="line-height:150%">Em duas décadas o IPT formou mais de 1.200 mestres profissionais, contribuindo para o treinamento avançado e a qualificação de profissionais em atividade no mercado.</p></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1626376734/$ofmm55vb2wp" alt="" width="600" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:600px; height:auto"> </td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:#ffffff; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" width="100%" style="border-collapse:separate!important; border:0px none #000000; border-radius:4px; background-color:#9042f4"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; padding:14px"><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADK-2BEag3YWnctj5-2FcMq3kHScJa75OnvlLZOHcu-2Fz-2BxfbB8S4VyR1MnnlJsJa164OebCJZ-2FJPOMTnM-2BGDwgGV2Xbpcjn4UcwukpC2aI387nO95lfoxXn3gzSh-2F-2B-2FqovVJU4zHywOW3w5Ch7MJKZJmrRGGSGyxf0FYWX-2BOxW0EPmSDk-2FWtHD91XjQdqMc77pEUu71A-3D-3DaYrd_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FU6r-2FtPXIdQpe1X5uMIyA6BKOD10AuQG9anDk3euarsP0dt0haX6D-2BcB9apcn00IN-2BSGaujcAZqnnpRotFrK4wZx0hkQ5vUQjU58ec0c2MxJTwXJ-2FBXeXvFTirB4bIf4w5Li6A3-2Fu4K6Xblh00JOy04rK5G802ijg06saqdHLY6H" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="" style="letter-spacing:normal; font-style:normal; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#FFFFFF; display:block; word-break:break-word!important" data-linkindex="3">MESTRADOS PROFISSIONAIS: clique aqui e conheça os cursos do IPT→ </a></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:18px; padding-bottom:18px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:dashed; border-top-width:2px; border-top-color:#eaeaea"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:9px; padding-bottom:0px; padding-left:18px; padding-right:18px"><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1625614356/$a6nqjczm579" alt="" width="200" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:200px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><table border="0" width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="x_m_1983907492177695254padding" align="left" bgcolor="transparent"><h2 style="line-height:125%"><strong>ONLINE E AO VIVO</strong></h2></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="x_m_1983907492177695254padding" align="left" bgcolor="transparent"><p style="line-height:150%"><span style="background-color:#00ffff"><strong>CURSOS DE ESPECIALIZAÇÃO | PRÓXIMAS TURMAS</strong></span></p></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td align="center" valign="top" class="x_section1Column" style="background-color:transparent; border-top:0; border-bottom:0px; padding-top:0px; padding-bottom:0px"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_sectionContainer" style="border-collapse:collapse; width:100%; max-width:600px!important; background-color:#FFFFFF"><tbody><tr><td valign="top" style=""><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="600" style="width:600px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="center" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1626376734/$yow87uidj2l" alt="" width="600" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:600px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><div style="text-align:left; line-height:150%"><strong><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADK7Dy6Jn-2FTcw6bvSirHHu6MdPDfu2wsZPXVOzuZAZJiyToIPcUcbvYhIVsif-2BtEe4VTjoBBT5IGmzSfjgiX01m7vTSNLYqJ124lmFHM-2FJnsDa9I726Qmcam-2FG9Zx56zvLofcFHkbklca7LLu0uZIneQyIxVUFznSabiqVgbmll9-2FD-2FHmcdHBnL46KJtWVvNqAZlfleJRGMoYsgNuJkxqcrWA-3DNXUE_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FQ6RRYDtr0SuO24zVO78f5sYnsrJvd-2B5WLWF9MmYf8aLeHynExbyUVjskYaFeqR-2FuHE7UpyaYv6wWQ-2BVsIn5tRx2XufUlrpxbAeKQ8WrsJkYsfbcUoLTVd684X6kd5PvYE3Hj1Pctat-2Fs6tVyJ1i1EqfWLAR-2BB6-2BamaOUjR7wk8t" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="4">MBA em Gestão de Tecnologia e Inovação</a></strong></div><div style="text-align:left; line-height:150%"><span style="font-size:15px"><strong>Duração:</strong>&nbsp;18 meses</span></div></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:transparent; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" width="100%" style="border-collapse:separate!important; border:0px none #000000; border-radius:4px; background-color:#2ed1c7"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; padding:14px"><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADK7Dy6Jn-2FTcw6bvSirHHu6MdPDfu2wsZPXVOzuZAZJiyToIPcUcbvYhIVsif-2BtEe4VTjoBBT5IGmzSfjgiX01m7vTSNLYqJ124lmFHM-2FJnsDa9I726Qmcam-2FG9Zx56zvLofcFHkbklca7LLu0uZIneQyIxVUFznSabiqVgbmll9-2FD-2FHmcdHBnL46KJtWVvNqAZlfleJRGMoYsgNuJkxqcrWA-3DMTkq_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2Fdka-2FekYO5tZltcrJSgj4T7fwZb5eariQcSLcn7OyY7AbeEuJTJbdEj5p5t2NKUJ5aEUMAxVa4XBX3V3QAWD0bZS-2F4J4KiO-2Fk71xENtLhHX04U7-2BJTbJWvg9i-2FN1CaW5myBzHn4hwzsFZQoePhawXXKc8ZhkGsIumfwCCeXN322X" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="" style="letter-spacing:normal; font-style:normal; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#FFFFFF; display:block; word-break:break-word!important" data-linkindex="5">Saiba mais → </a></td></tr></tbody></table></td></tr></tbody></table>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:18px; padding-bottom:18px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:dashed; border-top-width:2px; border-top-color:#eaeaea"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:18px; padding-bottom:18px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:solid; border-top-width:2px; border-top-color:#ffffff"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td align="center" valign="top" class="x_section1Column" style="background-color:transparent; border-top:0; border-bottom:0px; padding-top:0px; padding-bottom:0px"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_sectionContainer" style="border-collapse:collapse; width:100%; max-width:600px!important; background-color:#FFFFFF"><tbody><tr><td valign="top" style=""><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="300" style="width:300px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="center" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1625614356/$qu5nxyoagwg" alt="" width="300" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:300px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><div style="line-height:150%"><div style="line-height:150%"><strong><a href="http://clickemailmkt.ipt.br/ls/click?upn=B-2FGp0NrEMXgEqRANfBpGzbDclNoXcUBu4KdN8Bg1Z5VmKwMLuhWdpSzafjHCTByvSdVZIB59R59e8ILcU5TzAoww4g2x5z6GjREKgT-2BvF4ZSRUIfgKbohqS-2BsXwp214szSMmoS-2BEs6dew0i4yyDIsCjgN4XoxibFNoO8hZnrAKR-2BJ7gtNf0rZw6ksQoUHk6PnpKZP1eLqJnDumPVZ41RsA-3D-3DpHJu_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FSaCkfV2CIIPBE5lLJFhhgeK5FFVBgYlVly-2FjS3wSpdCfRBU3-2FN8stegZILLeMdH5M1bsYqLwFy5W1DuC3Ik7YV86VQ1MeWIFMKb2B39HbouDdNjhqSnk356Cr2aR5orTiYvtMyDJPkRN7sOaAnZ6kIfVmJGcXfDiZGnd61-2FEloF" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="6">Investigação do Subsolo: Geotecnia e Meio Ambiente</a></strong></div><div style="line-height:150%"><span style="font-size:15px"><strong>Duração:</strong>&nbsp;18 meses</span></div></div></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:transparent; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" width="100%" style="border-collapse:separate!important; border:0px none #000000; border-radius:4px; background-color:#2ed1c7"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; padding:14px"><a href="http://clickemailmkt.ipt.br/ls/click?upn=B-2FGp0NrEMXgEqRANfBpGzbDclNoXcUBu4KdN8Bg1Z5VmKwMLuhWdpSzafjHCTByvSdVZIB59R59e8ILcU5TzAoww4g2x5z6GjREKgT-2BvF4ZSRUIfgKbohqS-2BsXwp214szSMmoS-2BEs6dew0i4yyDIsCjgN4XoxibFNoO8hZnrAKR-2BJ7gtNf0rZw6ksQoUHk6PnpKZP1eLqJnDumPVZ41RsA-3D-3DY0Ec_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FXukYSdss-2BKiHFHp-2BCVpV3-2F2JsqnlHwE6KwXiyX25J3M4KNlOiveGs0ONsllxf80tl7VZFdmEwQ86jbg8PMlCVFskfhBn1TMFfjN0t69cC4yeSHAbOFWiL8COwHKCJSkpc8VX74LgGl-2Bpuh4hi60xiRfE455NTzu8DBrKPrbM7xe" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="" style="letter-spacing:normal; font-style:normal; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#FFFFFF; display:block; word-break:break-word!important" data-linkindex="7">Saiba mais → </a></td></tr></tbody></table></td></tr></tbody></table>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:18px; padding-bottom:18px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:solid; border-top-width:2px; border-top-color:#ffffff"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="300" style="width:300px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="center" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1625614356/$ic4s0kpq7t" alt="" width="300" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:300px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><div style="text-align:left; line-height:150%"><div style="line-height:150%"><div style="line-height:150%"><div style="line-height:150%"><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADKzoHJ9CxvM82duC-2FFCLfZTgStAZnvRAzF2U35Yc-2FpfEBk2ZnMCkSZfDwjsbNdJyUz-2FPa-2FvYpfd2iRNb-2F6ywlwfQzpFZMQw0iSjSUMEEoXz4n2mNJz5xoKrW2nx86HlJ6WyYklqNNVgcehBNIF-2Fi5u-2B7tdtYd0cuGrQmTKm0wLMoEbpSFpl8Q6Y4UVv3G30PsTY3-2FmxKDrvTxb9-2BI81sDiEQ-3Dkle1_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FXukYSdss-2BKiHFHp-2BCVpV39tcs7OzyN632CkBPs4nAx9jAmUvc7WPIA6-2FOKLg5PTQmaN207zo5-2Bk9Xz-2B8lwwEHMS5SW1HMPS7oYfr-2FQqC4324lIaUJJtlgUCWPGddlPMsu4g-2BLX4xr-2FezNLFY8Y-2BUj9UL1fAcMA7L1eQT53-2BN-2Bet" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="8"><strong>Materiais Compósitos e Polímeros</strong></a></div></div><div style="line-height:150%"><span style="font-size:15px"><strong>Duração:</strong>&nbsp;18 meses</span></div><div style="line-height:150%">&nbsp;</div></div></div></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:transparent; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" width="100%" style="border-collapse:separate!important; border:0px none #000000; border-radius:4px; background-color:#2ed1c7"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; padding:14px"><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADKzoHJ9CxvM82duC-2FFCLfZTgStAZnvRAzF2U35Yc-2FpfEBk2ZnMCkSZfDwjsbNdJyUz-2FPa-2FvYpfd2iRNb-2F6ywlwfQzpFZMQw0iSjSUMEEoXz4n2mNJz5xoKrW2nx86HlJ6WyYklqNNVgcehBNIF-2Fi5u-2B7tdtYd0cuGrQmTKm0wLMoEbpSFpl8Q6Y4UVv3G30PsTY3-2FmxKDrvTxb9-2BI81sDiEQ-3Dg0UW_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FXukYSdss-2BKiHFHp-2BCVpV3-2FFMzrpVPCzr4c53-2FfxlI3HTRFo8nqAYZIzax-2BidfQbLJP6J5FI7H08SHPMzIsqCiIqm5DgEmvkDhrT-2BHoPzWjRt4PQKlCOjLzXzPiaTZGJyFH7QxETMdXb47-2B9gzRFSp243Vek5zUdrzplo6DT-2BhEp" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="" style="letter-spacing:normal; font-style:normal; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#FFFFFF; display:block; word-break:break-word!important" data-linkindex="9">Saiba mais → </a></td></tr></tbody></table></td></tr></tbody></table>
+					</td></tr></tbody></table>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:18px; padding-bottom:18px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:dashed; border-top-width:2px; border-top-color:#eaeaea"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table>
+					</td></tr></tbody></table></td></tr><tr><td align="center" valign="top" class="x_section1Column" style="background-color:transparent; border-top:0; border-bottom:0px; padding-top:0px; padding-bottom:0px"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_sectionContainer" style="border-collapse:collapse; width:100%; max-width:600px!important; background-color:#FFFFFF"><tbody><tr><td valign="top" style=""><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="300" style="width:300px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="center" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1625614356/$h6yaqharrd6" alt="" width="300" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:300px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><div style="text-align:left; line-height:150%"><table border="0" width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="x_m_1983907492177695254padding" align="left" bgcolor="transparent"><div role="listitem" style="line-height:150%"><div role="listitem" style="line-height:150%"><div role="document" style="line-height:150%"><div role="document" style="line-height:150%"><div style="line-height:150%"><div style="line-height:150%"><strong><a href="http://clickemailmkt.ipt.br/ls/click?upn=B-2FGp0NrEMXgEqRANfBpGzXnMrIWcsUWyDQN2DvJF-2BkoOd9grpMJiVQJmCMOh4x7JSPtNxEE54h69JhJ0oJ01A-2BpwQ7AZJ835HYesHHcoSjMe0QEjGKGWBTNNgggS4OXpew7keB8zcYWC3Z-2F-2F67iqY9q4mIzdoaJHsC2CiOcEmG9S-2BXMK1vDvvq-2Bu8G5Ut8Zt5bT8AQvQNfsiKRA77EGyIQ-3D-3DiO0K_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FXukYSdss-2BKiHFHp-2BCVpV38g3Vj4UC4QvN6ujNT36srO7YC-2Bqct-2Beab7tX5XObBvWkFTKCELYfNaZnUxnmt-2BKVNrnEy0Rl5XsGE0HL35-2FCJIjMVwumZ8RfdqCzxKH2oCsazu-2Fbny6nqFg3v6Xl-2BlQtRfphYrmOGIA6WGruuNLgeg" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="10">MBA Executivo em Energia - Turma 3</a></strong></div><div style="line-height:150%"><div style="line-height:150%"><span style="font-size:15px"><strong>Duração:</strong>&nbsp;18 meses</span></div></div></div></div></div></div></div></td></tr></tbody></table></div></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:transparent; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" width="100%" style="border-collapse:separate!important; border:0px none #000000; border-radius:4px; background-color:#2ed1c7"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; padding:14px"><a href="http://clickemailmkt.ipt.br/ls/click?upn=B-2FGp0NrEMXgEqRANfBpGzXnMrIWcsUWyDQN2DvJF-2BkoOd9grpMJiVQJmCMOh4x7JSPtNxEE54h69JhJ0oJ01A-2BpwQ7AZJ835HYesHHcoSjMe0QEjGKGWBTNNgggS4OXpew7keB8zcYWC3Z-2F-2F67iqY9q4mIzdoaJHsC2CiOcEmG9S-2BXMK1vDvvq-2Bu8G5Ut8Zt5bT8AQvQNfsiKRA77EGyIQ-3D-3D_lOB_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FXukYSdss-2BKiHFHp-2BCVpV39R9jaxHKQnhosH1tGhZRICDJUFrLdX4iXm9duv6mdyaqXurT0H6y7If3Gd-2FUNw1KmefzhjbstAfCOsPCjvRkLj-2Fr7uTMY3t3rDaMQK2SEbVhTZ1T-2Fustlcicv06lZXkUWWQIrJz-2BZvTd9vhRNw-2F8XK" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="" style="letter-spacing:normal; font-style:normal; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#FFFFFF; display:block; word-break:break-word!important" data-linkindex="11">Saiba mais → </a></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:18px; padding-bottom:18px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:solid; border-top-width:2px; border-top-color:#ffffff"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="300" style="width:300px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="center" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1625614356/$qu5nxyoagwg" alt="" width="300" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:300px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><div style="line-height:150%"><div style="line-height:150%"><div style="line-height:150%"><strong><a href="http://clickemailmkt.ipt.br/ls/click?upn=B-2FGp0NrEMXgEqRANfBpGzQoRNF9T2IFq4b7P30NAjxrJZV0r93LZioKtSsYz3irOhdCVWNpGQYCxMWYEQ4MWOtvYXw6QINrEWfKs4HWDGTBaYX8yBSPLXqS4cSzswC3pSGGU51kf56Z1nUpqpm7RN6-2BssFtb-2FwK4CkuJrH8i3oWgy0uzSv-2BK-2BmdlLu6KDmh73-2B-2FRHTSKBdxUViKnr284sQ-3D-3D2jlw_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FXukYSdss-2BKiHFHp-2BCVpV39em6MO5Bwhibjq09yUd9emF1ZUsCEpwS0zujyQXNosnWHi4buhp1igPzHXhxVjzeaeUFq8WBBaEC3wUB39lF5A3A90tGTunWQfeQFolI4Gpe0ayKy6ZLLRj4GGcJCRaOplsPRDM6TYi6Sh7AMfENQ2" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="12">Segurança de Barragens</a></strong></div></div></div><div style="line-height:150%"><span style="font-size:15px"><strong>Duração:</strong>&nbsp;18 meses</span></div><div style="line-height:150%">&nbsp;</div></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:transparent; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" width="100%" style="border-collapse:separate!important; border:0px none #000000; border-radius:4px; background-color:#2ed1c7"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; padding:14px"><a href="http://clickemailmkt.ipt.br/ls/click?upn=B-2FGp0NrEMXgEqRANfBpGzQoRNF9T2IFq4b7P30NAjxrJZV0r93LZioKtSsYz3irOhdCVWNpGQYCxMWYEQ4MWOtvYXw6QINrEWfKs4HWDGTBaYX8yBSPLXqS4cSzswC3pSGGU51kf56Z1nUpqpm7RN6-2BssFtb-2FwK4CkuJrH8i3oWgy0uzSv-2BK-2BmdlLu6KDmh73-2B-2FRHTSKBdxUViKnr284sQ-3D-3DPM5w_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FXukYSdss-2BKiHFHp-2BCVpV3-2F9CXdkpmCesMH8sCnBvP-2BF5cL1Qy6VNSBscS9OJOJmmbI8Tn0ZEQG6DeKTCCFvqV3c5xctboBYT8kXp2-2BFWgol8JQzalwUv2Ll2y-2BdGff3v3MyYC-2B-2Bh97mBhF4PSOtkFIYW-2Fe0EX2-2F-2BcsZKUZnmYGj" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="" style="letter-spacing:normal; font-style:normal; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#FFFFFF; display:block; word-break:break-word!important" data-linkindex="13">Saiba mais → </a></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:18px; padding-bottom:18px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:dashed; border-top-width:2px; border-top-color:#eaeaea"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table>
+					</td></tr></tbody></table></td></tr><tr><td align="center" valign="top" class="x_section1Column" style="background-color:transparent; border-top:0; border-bottom:0px; padding-top:0px; padding-bottom:0px"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_sectionContainer" style="border-collapse:collapse; width:100%; max-width:600px!important; background-color:#FFFFFF"><tbody><tr><td valign="top" style=""><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="300" style="width:300px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="center" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1625614356/$ca4jcptwqr7" alt="" width="300" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:300px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><div style="text-align:left; line-height:150%"><strong><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADK0hOsuXecrY0hZ0KCZCtzhlUEaw3YqUAtSXztF1-2Fb-2FMxcihWJGwOZAtPif7G3whRvt3IGhOnwv-2FMWcxJ7P6WsFxfobSFs4TkOavOXp21-2FsgreF9yDFn43vtYYV6PLfm8iLXthEiyVCajKn-2BE-2BuuCHtl8h8twOCvN1V2HiIElx2AecVZb-2FDt3qydE9kYfg-2FCpRfJ4Cu2Cdxpn-2B6CzN54m7ak-3Do2wn_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FXukYSdss-2BKiHFHp-2BCVpV39AaJk9A-2FuZqHArLwOFqv7jJgQo2p4VPcTkd3jZHwkoN7rcqHFkyxKDfi-2BiPpx-2Bg-2FUMfvh8StfTum5o8bEAWQNNgyFJTAj00kj8ZUFhGjdUOvnuyuYqB5h6cR1-2BmC-2Fvh9NbN89sIdQ1hZHr4DeLNrQC" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="14">Transformação Digital e Inovação na Manufatura</a></strong> <table border="0" width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="x_m_1983907492177695254padding" align="left" bgcolor="transparent"><div role="listitem" style="line-height:150%"><div role="listitem" style="line-height:150%"><div role="document" style="line-height:150%"><div role="document" style="line-height:150%"><div style="line-height:150%"><div style="line-height:150%"><div style="line-height:150%"><span style="font-size:15px"><strong>Duração:</strong>&nbsp;18 meses</span></div></div></div></div></div></div></div></td></tr></tbody></table></div></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:transparent; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" width="100%" style="border-collapse:separate!important; border:0px none #000000; border-radius:4px; background-color:#2ed1c7"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; padding:14px"><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADK0hOsuXecrY0hZ0KCZCtzhlUEaw3YqUAtSXztF1-2Fb-2FMxcihWJGwOZAtPif7G3whRvt3IGhOnwv-2FMWcxJ7P6WsFxfobSFs4TkOavOXp21-2FsgreF9yDFn43vtYYV6PLfm8iLXthEiyVCajKn-2BE-2BuuCHtl8h8twOCvN1V2HiIElx2AecVZb-2FDt3qydE9kYfg-2FCpRfJ4Cu2Cdxpn-2B6CzN54m7ak-3DhU0Q_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FXukYSdss-2BKiHFHp-2BCVpV388JKWCRkaRL5wGtFbAQN2obZHSFE-2BFA2U8tYEDaQw2LtPOEzaKn2c3X07tG5iWeTKWQod4PKEQBe3QaopET-2Bi0DARuAwT0r-2B-2FyAE6qPD9bIWM99FlwXt6Voumum0HnHgJe9BYl7d2UUUfrv-2F5puwd1" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="" style="letter-spacing:normal; font-style:normal; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#FFFFFF; display:block; word-break:break-word!important" data-linkindex="15">Saiba mais → </a></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="300" style="width:300px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="center" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1625614356/$z4dr4z4eda8" alt="" width="300" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:300px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><div style="line-height:150%"><div style="line-height:150%"><div style="line-height:150%"><div style="line-height:150%"><strong><a href="http://clickemailmkt.ipt.br/ls/click?upn=B-2FGp0NrEMXgEqRANfBpGzZNdM-2Fzuhyxl6wjC5qT2Dppi4DUxdPXVA-2B1ukzUX2EkFzTFjYioOLJfqoInNR4tUQGJ3KPd3au57E4Azjbj1-2BRk713YZRffUqwbR7-2FQx9iX3zmrSIJNSQ-2F8UrmPwPKKyFe9AAcK-2Bhg26eqmJxwbav5szNl0kUIckHyMH1wGRXg62FOHIOWPtsOLbUrdko1y5bA-3D-3DzVE7_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FXukYSdss-2BKiHFHp-2BCVpV39ttjqbxC48YS0HJchLw4LWmhmxCcxtOiWtDrrFWF6iLD-2BGUjmLU0UDwX1quv12ClHc0WeuBtRkDlV2crdrN0EozjNB-2F6WSqgKBCpYZDsdkD1wj-2BT6yXRGqDrEogAKdW5dFwbC2-2BYGvSTaHobUelbPt" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="16">Arquitetura em Madeira: Projeto e Tecnologia</a></strong></div><div style="line-height:150%"><span style="font-size:15px"><strong>Duração:</strong>&nbsp;18 meses</span></div></div></div></div></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:transparent; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" width="100%" style="border-collapse:separate!important; border:0px none #000000; border-radius:4px; background-color:#2ed1c7"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; padding:14px"><a href="http://clickemailmkt.ipt.br/ls/click?upn=B-2FGp0NrEMXgEqRANfBpGzZNdM-2Fzuhyxl6wjC5qT2Dppi4DUxdPXVA-2B1ukzUX2EkFzTFjYioOLJfqoInNR4tUQGJ3KPd3au57E4Azjbj1-2BRk713YZRffUqwbR7-2FQx9iX3zmrSIJNSQ-2F8UrmPwPKKyFe9AAcK-2Bhg26eqmJxwbav5szNl0kUIckHyMH1wGRXg62FOHIOWPtsOLbUrdko1y5bA-3D-3D1GhO_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FfkoGnofclYai383wzLnJAySILGdEgz6RMASsDWNpeUD4N-2BAzyJW9CThdbZlyphiZIc6TsQP4XvW0E01qohdpu0Q-2BL-2BnKVv2WCr-2BPN9yd7-2BI5TcYyKnnU0HsqllA17rjTTizGFZmoh2759u8ZPRmfpptnovoFMvrYOPOI45IdvRt" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="" style="letter-spacing:normal; font-style:normal; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#FFFFFF; display:block; word-break:break-word!important" data-linkindex="17">Saiba mais → </a></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td align="center" valign="top" class="x_section1Column" style="background-color:transparent; border-top:0; border-bottom:0px; padding-top:0px; padding-bottom:0px"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_sectionContainer" style="border-collapse:collapse; width:100%; max-width:600px!important; background-color:#FFFFFF"><tbody><tr><td valign="top" style=""><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="600" style="width:600px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" style="padding-top:18px; padding-bottom:18px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:dashed; border-top-width:2px; border-top-color:#eaeaea"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:9px; padding-bottom:9px; padding-left:18px; padding-right:18px"><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1625614356/$biwx3sr5rmr" alt="" width="200" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:200px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><table border="0" width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="x_m_1983907492177695254padding" align="left" bgcolor="transparent"><h2 style="line-height:125%"><strong>ONLINE E AO VIVO</strong></h2></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="x_m_1983907492177695254padding" align="left" bgcolor="transparent"><p style="line-height:150%"><span style="background-color:#ffff00"><strong>CURSOS DE CURTA DURAÇÃO | PRÓXIMAS TURMAS</strong></span></p></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="center" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1626376734/$wvvn7vniyx8" alt="" width="600" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:600px; height:auto"> </td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:#ffffff; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" style="border-collapse:separate!important; border:0px none #000000; border-radius:4px; background-color:#f4b742"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; padding:14px"><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADK-2BEag3YWnctj5-2FcMq3kHScIDQyNtUtTvbvBDDPUDtZ8rJGehIICPQEEuTRSz5I4-2BiV5LJHTz1kPm0WcJrh6IKeouesTDQJngBu5Zmrw6MrLxEJp8CtUHgNnea12flXjR7uuW676-2FNKQTE59Qlvc5kvhFbGRVk-2Bg7-2Bgdnz94z75YCZIEq5EA8j-2FF51ON1wJQAdg-3D-3DHzNj_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FfkoGnofclYai383wzLnJAwnngzR6RMbbuJfTbN2NM8rOYkdMA4IQ7aAXEKstGkFUi4xRlfVppJhenTJ8cbp7oB3Om-2ByxNrGR3DMepGWYeAZ15GZ9rY7wmNF5NarqTuX4gORd9yM3-2B0JumdiV4u9TK7bKrFMBb9-2FiAyfPtOIbwvR" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="" style="letter-spacing:normal; font-style:normal; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#000000; display:block; word-break:break-word!important" data-linkindex="18">CURSOS DE CURTA DURAÇÃO: INSCRIÇÕES ABERTAS! → </a></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" style="padding-top:18px; padding-bottom:18px"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%; border-collapse:initial; border-top-style:dashed; border-top-width:2px; border-top-color:#eaeaea"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="#ffffff" align="left" style="padding-top:9px; padding-bottom:9px; padding-left:18px; padding-right:18px"><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1626376734/$h51mxrhrmgq" alt="" width="300" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:300px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="center" style=""><img data-imagetype="External" src="https://d335luupugsy2.cloudfront.net/cms/files/143183/1626376734/$2suvk74udgb" alt="" width="600" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:600px; height:auto"> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><p style="line-height:150%">Novas habilidades e competências são essenciais para a melhoria do desempenho. Investir na qualificação é fundamental para o crescimento da empresa e das equipes de colaboradores.</p></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_componentContainerButton" style="background-color:#ffffff; min-width:100%; border-collapse:collapse"><tbody><tr><td valign="top" align="center" class="x_componentContainerCellButton" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px"><table border="0" cellpadding="0" cellspacing="0" class="x_componentBlockButton" style="border-collapse:separate!important; border:0px none #000000; border-radius:4px; background-color:#2d6ae0"><tbody><tr><td align="center" valign="middle" class="x_componentBlockCellButton" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; padding:14px"><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADK-2BEag3YWnctj5-2FcMq3kHScJAICPHXQG2Cn3nQ5vOAIrV4hIzm748BUvv1AFS-2F8QdWfSzol-2B0336yOH0hUzLPR-2BvI56ABmVhAGl5RNK9NrzNwzFh6qgypGD261STFx-2FMA28Q2tIUfwTj5dj1nJ4WTX0F-2BHVbmv1IfgoDN391QMZY308QqQj7wo3tOlPyEHgUpDA-3D-3DAmLN_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FfkoGnofclYai383wzLnJAz5X1a-2F334oYPE9J-2FuTiEfZtlhZwISXrelpVRp6g8mdOIxUr3C0puUiECsoKPXU4-2BrR-2FL9HjLhkQX5a7FLLWZjE1BxvsWCBKW04skpWgPXiivP1-2BeqUD3hV3C7H1r4IAfenAZW-2FTaqjXViyJjo83XZO" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" class="x_componentButton" title="" style="letter-spacing:normal; font-style:normal; font-weight:normal; line-height:100%; text-align:center; text-decoration:none; color:#ffffff; display:block; word-break:break-word!important" data-linkindex="19">SAIBA MAIS SOBRE EDUCAÇÃO CORPORATIVA COM O IPT→ </a></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:150%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><p style="line-height:150%">Saiba das novidades, siga nossa página no <a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADKyMSkJdq1StTv4DEk8U76aaRVwFZPRwRl7YhInCIRBdgtFNAhvHXXR8RFrk7dz-2FXpwRKqgmf70wlAEwd8fkrwknrKbyU5sFiy7vMyPzfP4IkPr66SobDCf6SlirG6MAXlTLEcNVfZTH7Nez1kS4CowXVKNyCKjCzPrkYZqtDteRkx5p95XnC8lEPR8vRVWsaQLauC1Tu5Eb02pnCizAvPBc5e0NHYM-2FbpeIHcjaTokdjA6mcF-2FooK2Y0qimyVqBdWanUXaMi3IQvtwW1o6s5rNdd7vqXbM10AoIq3HvUed-2BRfL2n_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FfkoGnofclYai383wzLnJAx02hk9A1xw5DhXsIy8FnMrF8eTo00-2Fb9-2F2PjP-2BmU1fHCDsHt5DCr-2BXaWOI8XDxirHzfBd89a-2FrtvuWuIFjiOZFNc0gJH2LgaJNgHS202qvZ-2FZXJYp-2BL8hngpern8tddThXP193cC8-2BQJKbOvpOYDpu" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="20">Linkedin</a>.&nbsp;</p><p style="line-height:150%">Um abraço.</p></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" style="padding-top:0px; padding-bottom:0px; padding-left:18px; padding-right:18px"><span class="circle-image"><img data-imagetype="External" src="{imagem_usuario}" alt="" width="100" border="0" class="x_img-max" style="border:0; line-height:100%; outline:none; display:block; max-width:100px; height:auto"></span> </td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:100%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><p id="x_pageTitle" class="x_ms-core-pageTitle" style="line-height:100%"><strong><span id="x_DeltaPlaceHolderPageTitleInTitleArea">{usuario_remetente}</span></strong></p><p style="line-height:100%">Cursos IPT, o ínicio de sua história começa aqui.</p></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:100%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><table role="presentation" align="center" style="width:120.5px"><tbody><tr align="center"><td style="width:35px"><table role="presentation" width="auto" align="center"><tbody><tr align="center"><td class="x_m_-4475963490830699698display_block_on_small_screens" valign="middle"><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADK3-2BVD9ryHB-2FZ93rPCxBVIjn-2BaUciM02rTX-2FoQi1mk7okE31apsUtCNguCz3X1Z7oEnhEF2aosSN0ypUnGQ2Ol3I-3D09p6_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FfkoGnofclYai383wzLnJAwfW-2BTak5RLx8MWsLf-2Fc0IfgrsUha06uJQqlMcExAuviLcmb-2BfDLD3lodOybXhqYC4khvFmME-2FNJm-2BgA0-2F-2F0fxhqYSWFVPLNCBCd6elpc-2BdgdJqkfXbr6zHbCtWnMHT-2FePm719crkih6oIEIE379bfn" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" title="IPT " data-linkindex="21"><img data-imagetype="External" src="https://ci3.googleusercontent.com/proxy/gLLshhyQTdceWI195rQ4wrb7PoCZSBO0mm-v4jqOWc9OeIFBBU3FrlIoJmMa8qQMiMLReqrhyBhN88lx6H6NReUEkTlIsMW9g6FiXO-WiXenKKVRUsIG91BrqNSPLtWPyeeqlsipG_2XaZTOZXjyOQBv9ZU0IkrX7JaDrfQr5EGivGXteuEf21y7BG4HoD5nYjrExonESRdKgaywCjKSeLOrqwN349sGhgiQnKzxQUCe-fM=s0-d-e1-ft#https://hs-5135495.f.hubspotemail.net/hs/hsstatic/TemplateAssets/static-1.24/img/hs_default_template_images/modules/Follow+Me+-+Email/facebook_square_color.png" class="x_CToWUd" alt="Facebook" width="auto" height="25"></a></td></tr></tbody></table></td><td style="width:71.5px"><table role="presentation" width="auto" align="center"><tbody><tr align="center"><td class="x_m_-4475963490830699698display_block_on_small_screens" valign="middle"><a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADKyMSkJdq1StTv4DEk8U76aaRVwFZPRwRl7YhInCIRBdg31TaMabUwIExTzFUkA24XJ1OglY8cZKOiSG9UddGJgC0JUQnYx7NKhls6YJyBDnP-2B-2FZohmzp6RFE-2FVpoLc7eMP1FY6Tm7PLR-2BmnD-2BpskKg9O6WYuth1gTpqsVkZXUe-2FfzTQqCikwm-2BPuYURNwnBhsjURFffV-2FBWgTSaFUmrr4Q4-3D4PuH_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FfkoGnofclYai383wzLnJAyQ1PieGOV62Xv2wfc421fwi2-2FfSSg-2Fxiy8jj18Tdfx-2FAiXz0Fav-2Bt18zRechEHKnB1oiv0wIdysKEGbShQbMAT-2FaB-2FWv668t0hjE6zi5yhX2qlzqyo-2Fo0UDR2KlnfUdSN0RJbvrkB3sl0OASGsomKs" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" title="IPT cursos" data-linkindex="22"><img data-imagetype="External" src="https://ci4.googleusercontent.com/proxy/war0W1Ad0aHN0XB1TG7dM9Y3qBLDSvBJzA2-QJMIIZu7gI8CJdezWSJQL7PbDh7wrVPWpUBiDZa21YaPyc093ACdVMQuoC-lEP36PP3e6JQh4EFQwcGhq3gsK-FyszHPuLLs0dVX5DTI6FlCHqGPt8B4UM6YOzq9iJqnDOj80JO_FBQnc8tgjTXME7YUmt4rL6QGvawAnpKlO0ls7iDapR_WgRZVtifns-JAS4LeFjwxJt8=s0-d-e1-ft#https://hs-5135495.f.hubspotemail.net/hs/hsstatic/TemplateAssets/static-1.24/img/hs_default_template_images/modules/Follow+Me+-+Email/linkedin_square_color.png" class="x_CToWUd" alt="LinkedIn" width="auto" height="25"></a></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse!important"><tbody><tr><td bgcolor="transparent" align="left" class="x_padding" style="font-size:16px; line-height:100%; font-family:Helvetica,Arial,sans-serif; color:#666666; padding:9px 18px; word-break:break-word!important"><p style="line-height:100%"><span style="font-family: tahoma, sans-serif, serif, EmojiFont; font-size: 10px;">Seus dados são acessados somente por profissionais do IPT devidamente autorizados, respeitando os princípios de proporcionalidade, necessidade e relevância, além do compromisso de confidencialidade e preservação da privacidade nos termos da Política de Privacidade disponível em:&nbsp;<a href="http://clickemailmkt.ipt.br/ls/click?upn=9Ge8vP0WQlr4MHZhGMADKwtgnZ52wT-2B3qcVKsxacgWkjCp5pf8dNiLVC2EFEfyRd-2BcWdN75tXUG9qGvWjP0pbmyV0KWtCM8zYWkr3V6biOpxui4UhvumanXA2ALjlQe3IfA77ZW8OYi7Mgiu56SmlHPvQj3YzaW9j7dSPgxXeAFsvC6008fMAW84KD3cR77rFWwVuJ95wsOpU10uY7GbuD94PxJyjv2pKZW94yKFcjY-3DUHxW_MyaswxdmJZqd0kuySmigLxp5cKXxNANDivbyyLPnmRShmn-2FmI5PGHcL6YJEHNc2S5uPJO6IzqMdFrLVNEG4Rqu2WiEbXH0vFKkZnfB-2FEaGIMnfwInFJnigiEHFlwcstnrQ8Sh-2BKtV4p9BsvJrFeC-2FfkoGnofclYai383wzLnJAy02SnJ206o5vtUXReYb-2F-2BuRH-2BChqVc1vSRlwYgq5mSePHPeR16fjWr9ffS-2FzQlla1Z-2F-2BYXVjBOkZMOGZ6ZhHlzPp434r6z8up4FdCX7bzbvZigMQfwZK5UFQlyAKwgCzybQAJ-2FZffhhOyK71mD9g27" target="_blank" rel="noreferrer noopener" data-auth="NotApplicable" tabindex="-1" title="https://www.ipt.br/politica_de_privacidade" data-linkindex="23">https://www.ipt.br/politica_de_privacidade</a></span></p></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td align="center" valign="top" class="x_section1Column" style="background-color:transparent; border-top:0; border-bottom:0px; padding-top:0px; padding-bottom:0px"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="x_sectionContainer" style="border-collapse:collapse; width:100%; max-width:600px!important; background-color:transparent"><tbody><tr><td valign="top" style=""><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="600" style="width:600px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:16px; line-height:110%; font-family:Helvetica,Arial,sans-serif; color:#666666"><table class="x_columnContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="600" style="width:600px; border-collapse:collapse"><tbody><tr><td class="x_columnContainerCell" valign="top" style="font-size:11px; line-height:120%; font-family:Helvetica,Arial,sans-serif; color:#888888; text-align:center; padding-top:9px; padding-bottom:9px; padding-left:9px; padding-right:9px"><p style="font-size:11px!important; margin:0; line-height:120%">Enviado por <b>Instituto de Pesquisas Tecnológicas</b></p><p style="font-size:11px!important; margin:0; line-height:120%">Av. Prof. Almeida Prado 532 Cid. Universitária - Butantã. 05508-901 São Paulo/SP - F +55 11 3767-4000 </p><p style="font-size:11px!important; margin:0; line-height:120%"></p><span style="display:none; font-size:1px; color:#ffffff; line-height:1px; max-height:0px; max-width:0px; opacity:0; overflow:hidden">•</span> </td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></center>
+                    <span style="display: none; font-size: 1px; color: #ffffff; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden">•</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

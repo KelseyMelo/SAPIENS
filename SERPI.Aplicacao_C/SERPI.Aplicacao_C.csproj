@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76390A32-B430-4E53-B80A-D1BB285698B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SERPI.Aplicacao_C</RootNamespace>
+    <AssemblyName>SERPI.Aplicacao_C</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlunoAplicacao.cs" />
+    <Compile Include="AreaAplicacao.cs" />
+    <Compile Include="ArquivoAplicacao.cs" />
+    <Compile Include="CadastroAutomaticoAlunoAplicacao.cs" />
+    <Compile Include="CertificadoAplicacao.cs" />
+    <Compile Include="CursoAplicacao.cs" />
+    <Compile Include="DisciplinaAplicacao.cs" />
+    <Compile Include="DocumentosAcademicosAplicacao.cs" />
+    <Compile Include="FinanceiroAplicacao.cs" />
+    <Compile Include="FIPTAplicacao.cs" />
+    <Compile Include="FornecedorAplicacao.cs" />
+    <Compile Include="GeraisAplicacao.cs" />
+    <Compile Include="GrupoAplicacao.cs" />
+    <Compile Include="InadimplenteAplicacao.cs" />
+    <Compile Include="InscricaoAplicacao.cs" />
+    <Compile Include="MatriculaAplicacao.cs" />
+    <Compile Include="Matricula_turma_orientacaoAplicacao.cs" />
+    <Compile Include="MonitorAplicacao.cs" />
+    <Compile Include="OferecimentoAplicacao.cs" />
+    <Compile Include="ProfessorAplicacao.cs" />
+    <Compile Include="QuadrimestreAplicacao.cs" />
+    <Compile Include="TelaAplicacao.cs" />
+    <Compile Include="TipoCursoAplicacao.cs" />
+    <Compile Include="TurmasAplicacao.cs" />
+    <Compile Include="UsuarioAplicacao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SERPI.Dominio_C\SERPI.Dominio_C.csproj">
+      <Project>{7e38c8ed-d083-4fed-b2e4-5319ff71612c}</Project>
+      <Name>SERPI.Dominio_C</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SERPI.Repositorio_C\SERPI.Repositorio_C.csproj">
+      <Project>{e0f1127c-4afb-47e2-a753-ce99ab1c3a7f}</Project>
+      <Name>SERPI.Repositorio_C</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

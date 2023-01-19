@@ -1,0 +1,2639 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SERPI.master.cs" Inherits="SERPI.UI.WebForms_C.SERPI" %>
+
+<!DOCTYPE html>
+
+<html xmlns="https://www.w3.org/1999/xhtml" lang="pt-br" class="translated-ltr">
+<head runat="server">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <%--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>--%>
+
+    <title>SAPIENS :: Sistema de Apoio Integrado ao Ensino</title>
+
+    <link rel="SHORTCUT ICON" href="img/formatura.png" type="image/x-icon"/>
+
+   <%-- <!-- Bootstrap Core CSS -->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+
+<%--    <link href="Content/datepicker.css" rel="stylesheet"  type="text/css"/>--%>
+        
+    <%--<link href="Content/home.css" rel="stylesheet"  type="text/css" />
+
+    <!-- Timeline CSS -->
+    <link href="Content/timeline.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="Content/sb-admin-2.css" rel="stylesheet" />
+    <link href="Content/metisMenu.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Morris Charts CSS -->
+    <link href="Content/morris.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="Content/EasyCon.css" rel="stylesheet" />
+
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css"/>--%>
+
+    <!-- Bootstrap 3.3.7 -->
+    <link href="Content/AdminLTE/bootstrap.min.css" rel="stylesheet" />
+    <%--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>--%>
+    
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <!-- Font Awesome Animação -->
+    <link href="Content/font-awesome-animation.min.css" rel="stylesheet" />
+
+    <%--https://use.fontawesome.com/releases/v5.0.2/js/all.js--%>
+
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"/>
+  
+    <!-- Theme style AdminLTE AdminLTE v2.3.7 -->
+    <link href="Content/AdminLTE/AdminLTE.min.css" rel="stylesheet" />
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link href="Content/AdminLTE/skins/_all-skins.min.css" rel="stylesheet" />
+
+    <link href="Content/animate.min.css" rel="stylesheet" />
+
+    <style type="text/css">
+        body { padding-right: 0 !important }
+
+        .btn-circle.btn-xl {
+            width: 70px;
+            height: 70px;
+            padding: 10px 16px;
+            border-radius: 35px;
+            font-size: 24px;
+            line-height: 1.33;
+        }
+
+        .btn-circle.btn-lg {
+          width: 50px;
+          height: 50px;
+          padding: 10px 16px;
+          font-size: 18px;
+          line-height: 1.33;
+          border-radius: 25px;
+        }
+
+        .btn-circle {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.42857;
+        }
+
+        .btn-circle-xs {
+            width: 20px;
+            height: 20px;
+            padding: 4px 5px;
+            border-radius: 13px;
+            text-align: center;
+            font-size: 10px;
+            line-height: 1.3;
+        }
+
+        .btn-black{background-color:#000;color: #FFF;}
+        .btn-black:hover{color: #FFF;}
+
+        .btn-grey{background-color:#909090;color: #FFF;}
+        .btn-grey:hover{background-color: #818181;color: #FFF;}
+
+        .btn-orange{background-color:#df8600;color: #FFF;}
+        .btn-orange:hover{background-color: #ce7b00;color: #FFF;}
+
+        .btn-vinho{background-color:#880000;color: #FFF;}
+        .btn-vinho:hover{background-color: #660000;color: #FFF;}
+
+        .btn-purple{background-color:#9d3cff;color: #FFF;}
+        .btn-purple:hover{background-color: #8000ff;color: #FFF;}
+
+        hr {
+              height:0;
+              margin:0;
+              background:transparent;
+              border-bottom:1px solid #d8d8d8;
+            }
+
+        .opt {
+            cursor: pointer;
+        }
+
+        .negrito {
+          font-weight:bold!important;
+        }
+
+        .arrastavel {
+            cursor: move;
+        }
+
+        .piscante {
+            animation:1s blinker linear infinite;
+            -webkit-animation:2s blinker linear infinite;
+            -moz-animation:1s blinker linear infinite;
+        }
+
+            @-moz-keyframes blinker {  
+             0% { opacity: 1.0; }
+             50% { opacity: 0.0; }
+             100% { opacity: 1.0; }
+             }
+
+            @-webkit-keyframes blinker {  
+             0% { opacity: 1.0; }
+             50% { opacity: 0.0; }
+             100% { opacity: 1.0; }
+             }
+
+            @keyframes blinker {  
+             0% { opacity: 1.0; }
+             50% { opacity: 0.0; }
+             100% { opacity: 1.0; }
+        }
+
+        .table-striped>tbody>tr:nth-child(even)>td, .table-striped>tbody>tr:nth-child(even)>th {
+           background-color: #dfefff; /*Choose your own color here*/
+         }
+
+        .modalForProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: black;
+            z-index: 99;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            -moz-opacity: 0.8;
+            min-height: 100%;
+            width: 100%;
+        }
+
+        label {
+            font-weight: normal !important;
+        }
+
+        .loading {
+            font-family: Arial;
+            font-size: 10pt;
+            border: 5px solid #67CFF5;
+            width: 200px;
+            height: 100px;
+            display: none;
+            position: fixed;
+            background-color: White;
+            z-index: 999;
+        }
+
+        .progress
+             {
+               /*color:White;*/
+               /*width:26px;*/
+               position: absolute; /*fixed*/
+                z-index: 10050;
+                height:100px; 
+                width: 200px;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                /* bring your own prefixes */
+                transform: translate(-50%, -50%);
+
+                background-color: White;
+                border: 6px solid #67CFF5;
+                /*border-color:#67CFF5;*/
+                /*filter: alpha(opacity=60);
+                opacity: 0.6;
+                -moz-opacity: 0.8;*/
+             }
+
+        html *
+        {
+           /*font-size: small !important;*/
+           /*color: #000 !important;
+           font-family: Arial !important;*/
+        }
+
+        input[type="text"], input[type="date"] , input[type="number"] , input[type="time"] {
+            font-size: 14px;
+        }
+
+        .nav>li.active>a {
+            background-color: #dfdfdf !important;
+            color: #dfdfdf;
+        }
+
+        .img-redondo{
+            border-radius: 50% !important;
+            width: 50px !important;
+            height: 50px !important;
+        }
+
+        @font-face {
+            font-family: 'password';
+            font-style: normal;
+            font-weight: 400;
+            src: url('font/password.ttf');
+        }
+
+        input.key {
+            font-family: 'password';
+        }
+
+    </style>
+
+    <div id="divPogress" class="loading" align="center">
+        Processando... <br />Por favor, aguarde.
+        <br />
+        <img src="img/loader.gif" width="42" height="42" alt="" />
+    </div>
+
+    <script>
+       
+        function ShowProgress() {
+            setTimeout(function () {
+                var modal = $('<div />');
+                modal.addClass("modal");
+                //$('body').append(modal);
+                $("#divPogress").append(modal);
+                var loading = $(".loading");
+                loading.show();
+                //loading.modal();
+                var top = Math.max($(window).height() / 2 - loading[0].offsetHeight / 2, 0);
+                var left = Math.max($(window).width() / 2 - loading[0].offsetWidth / 2, 0);
+                loading.css({ top: top, left: left });
+            }, 200);
+        }
+
+        function funcDesativaShow() {
+            var loading = $(".loading");
+            loading.hide();
+        }
+    </script>
+        
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="hold-transition skin-blue sidebar-mini" id="Body" runat ="server" onkeydown="teclaEnter();">
+    
+        <!-- jQuery 2.2.3 -->
+    <script src="Scripts/AdminLTE/jQuery/jquery-2.2.3.min.js"></script>
+    <%--<script src="Scripts/AdminLTE/jQuery/jquery-2.2.3.min.js"></script>--%>
+<%--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>--%>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap 3.3.7 -->
+    <script src="Scripts/AdminLTE/Bootstrap/bootstrap.min.js"></script>
+<%--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>--%>
+
+
+<!-- AdminLTE App -->
+    <script src="Scripts/AdminLTE/app.min.js"></script>
+    <%--<script src="Scripts/AdminLTE/adminlte.min.js"></script>--%>
+
+    <!-- jQuery -->
+    <%--<script src="Scripts/jquery-2.1.0.js"></script>
+    <script src="Scripts/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="Scripts/bootstrap.min.js"></script>--%>
+<%--    <script src="Scripts/bootstrap-datepicker.js"></script>
+    <script src="Scripts/bootstrap-datepicker.pt-BR.js"></script>   --%>
+
+    <!-- Custom Theme JavaScript -->
+    <%--<script src="Scripts/sb-admin-2.js"></script>
+    <script src="Scripts/metisMenu.min.js"></script>--%>
+    <script>
+        function fImagemDefaultMaster(img) {
+            img.onerror = "";
+            img.src = 'img/pessoas/avatarunissex.jpg';
+        }
+    </script>
+
+    <form id="frmMaster" runat="server" autocomplete="off">
+        <input type="hidden" id ="hQTab"  name="hQTab" value="vazio" />
+        <div class="wrapper">
+
+            <!-- Main Header -->
+            <header class="main-header">
+
+                <!-- Logo -->
+                <a href="Principal.aspx" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><i class ="fa fa-graduation-cap"></i><p style="font-size:10px;">SAPIENS</p></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><i class ="fa fa-graduation-cap"></i><b> SAPIENS</b><label id="lblHomolog" class="piscante" runat="server" visible="false">Homolog</label></span>
+                    
+                </a>
+
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button" onclick="switchBodyState()">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <!-- Navbar Right Menu -->
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- Messages: style can be found in dropdown.less-->
+
+                            <%--<li class="dropdown messages-menu">
+                                <!-- Menu toggle button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="label label-success">4</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 4 messages</li>
+                                    <li>
+                                        <!-- inner menu: contains the messages -->
+                                        <ul class="menu">
+                                            <li>
+                                                <!-- start message -->
+                                                <a href="#">
+                                                    <div class="pull-left">
+                                                        <!-- User Image -->
+                                                        <img src="img/Eu2.jpg" class="img-circle" alt="User Image"/>
+                                                    </div>
+                                                    <!-- Message title and timestamp -->
+                                                    <h4>Support Team
+                                                        <small><i class="fa fa-clock-o"></i>5 mins</small>
+                                                    </h4>
+                                                    <!-- The message -->
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li>
+                                            <!-- end message -->
+                                        </ul>
+                                        <!-- /.menu -->
+                                    </li>
+                                    <li class="footer"><a href="#">See All Messages</a></li>
+                                </ul>
+                            </li>
+                            <!-- /.messages-menu -->
+
+                            <!-- Notifications Menu -->
+                            <li class="dropdown notifications-menu">
+                                <!-- Menu toggle button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-bell-o"></i>
+                                    <span class="label label-warning">10</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 10 notifications</li>
+                                    <li>
+                                        <!-- Inner Menu: contains the notifications -->
+                                        <ul class="menu">
+                                            <li>
+                                                <!-- start notification -->
+                                                <a href="#">
+                                                    <i class="fa fa-users text-aqua"></i>5 new members joined today
+                                                </a>
+                                            </li>
+                                            <!-- end notification -->
+                                        </ul>
+                                    </li>
+                                    <li class="footer"><a href="#">View all</a></li>
+                                </ul>
+                            </li>
+                            <!-- Tasks Menu -->
+                            <li class="dropdown tasks-menu">
+                                <!-- Menu Toggle Button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-flag-o"></i>
+                                    <span class="label label-danger">9</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 9 tasks</li>
+                                    <li>
+                                        <!-- Inner menu: contains the tasks -->
+                                        <ul class="menu">
+                                            <li>
+                                                <!-- Task item -->
+                                                <a href="#">
+                                                    <!-- Task title and progress text -->
+                                                    <h3>Design some buttons
+                                                        <small class="pull-right">20%</small>
+                                                    </h3>
+                                                    <!-- The progress bar -->
+                                                    <div class="progress xs">
+                                                        <!-- Change the css width attribute to simulate progress -->
+                                                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">20% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <!-- end task item -->
+                                        </ul>
+                                    </li>
+                                    <li class="footer">
+                                        <a href="#">View all tasks</a>
+                                    </li>
+                                </ul>
+                            </li>--%>
+
+                            <li visible="false" runat="server" id="liDicasBootstrap" class="">
+                                <a title="Dicas Bootstrap" href="javascript:fAbreModalBootstrap();" ><i class="fa fa-info-circle fa-lg"></i></a>
+                            </li>
+
+                            <!-- Notifications: style can be found in dropdown.less -->
+                            <li class="dropdown notifications-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                    <i id="id_sino_notificacao" runat="server" class="fa fa-bell-o faa-shake animated"></i>
+                                    <span id="id_EtiquetaNotificacao" runat="server" class="label label-warning"><asp:Label runat="server" ID="lblQtdNotificao"></asp:Label></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header"><asp:Label runat="server" ID="lblDescricaoQtdNotififcacao"></asp:Label></li>
+                                    <li>
+                                        <!-- inner menu: contains the actual data -->
+                                        <ul class="menu">
+                                            <asp:Literal ID="litMenuNotificacao" runat="server"></asp:Literal>
+
+                                            <%--<li>
+                                                <a href="#">
+                                                    <i class="fa fa-users text-aqua"></i>5 new members joined today
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-warning text-yellow"></i>Very long description here that may not fit into the page and may cause design problems
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-users text-red"></i>5 new members joined
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-shopping-cart text-green"></i>25 sales made
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-user text-red"></i>You changed your username
+                                                </a>
+                                            </li>--%>
+
+                                        </ul>
+                                    </li>
+                                    <li class="footer hidden"><a href="#">View all</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- User Account Menu -->
+                            <li class="dropdown user user-menu">
+                                <!-- Menu Toggle Button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <!-- The user image in the navbar-->
+                                    <img runat ="server" id="imgLogin1" onerror="fImagemDefaultMaster(this);" src="img/avatarunissex.jpg" class="user-image" alt="Imagem do usuário"/>
+                                    <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                    <span class="hidden-xs"><asp:Label ID="lblNomeUsuario1" runat="server" Text="usuário"></asp:Label></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- The user image in the menu -->
+                                    <li class="user-header">
+                                        <img runat ="server" id="imgLogin2" onerror="fImagemDefaultMaster(this);" src="img/avatarunissex.jpg" class="img-circle" alt="Imagem do usuário"/>
+                                        <p>
+                                            <asp:Label ID="lblNomeUsuario2" runat="server" Text="usuário"></asp:Label>
+                                            <%--<small>Membro desde Nov. 2012</small>--%>
+                                        </p>
+                                    </li>
+                                    <!-- Menu Body -->
+                                    <%--<li class="user-body">
+                                        <div class="row">
+                                            <div class="col-xs-12 text-center">
+                                                <a href="#">Dados Pessoais</a>
+                                            </div>
+                                        </div>
+                                        <!-- /.row -->
+                                    </li>--%>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a id="aBtnAltearSenha" runat="server" href="#" class="btn btn-default btn-flat" onclick="javascript:AbreAlteraSenha();" ><i class ="fa fa-key fa-fw"></i> Alterar Senha</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <%--<a href="#" class="btn btn-default btn-flat"><i class ="fa fa-sign-out fa-fw"></i> Sair</a>--%>
+                                            <asp:LinkButton runat="server" ID="btnSair" OnClick="btnSair_Click" ClientIDMode="Static" Text="Sair" Visible="true" CssClass="btn btn-default btn-flat"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Sair
+                                            </asp:LinkButton>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Control Sidebar Toggle Button -->
+                            <li>
+                                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+
+                    <!-- Sidebar user panel (optional) -->
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img runat ="server" id="imgLogin3" onerror="fImagemDefaultMaster(this);"  src="img/avatarunissex.jpg" class="img-circle" title="Clique aqui para alterar a foto" alt="Imagem do usuário" style="cursor:pointer" onclick="fModalTrocarFoto()"/>
+                        </div>
+                        <div class="pull-left info">
+                            <p><asp:Label ID="lblNomeUsuario3" runat="server" Text="usuário"></asp:Label></p>
+                            <!-- Status -->
+                            <%--<a href="#"><i class="fa fa-circle text-success"></i>Online</a>--%>
+                        </div>
+                    </div>
+
+                    <!-- search form (Optional) -->
+                    <%--<form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>--%>
+                    <!-- /.search form -->
+
+                    <!-- Sidebar Menu -->
+                    <ul class="sidebar-menu">
+                        <%--<li class="header">OPERACIONAL</li>--%>
+                        <!-- Optionally, you can add icons to the links -->
+                        <li visible="false" id="liAdmSistema" runat="server" class="treeview">
+                            <a href="#"><i class="fa fa-gear text-aqua fa-lg"></i><span style="font-size:medium">&nbsp;&nbsp;&nbsp;Adm. Sistema</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liPortalAluno" visible="false" runat="server"><a id="aPortalAluno" runat ="server" href="#"><i class="fa fa-angle-right"></i> <span>Portal do Aluno</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="liPortalProfessor" visible="false" runat="server"><a id="aPortalProfessor" runat ="server" href="#"><i class="fa fa-angle-right"></i> <span>Portal do Professor</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="liCadArquivos" visible="false" runat="server"><a id="aCadArquivos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-aqua"></i><span>Arquivos (p/ portal)</span> </a></li>
+                                <li id="liCadDocumentosAcademicos" visible="false" runat="server" style="display:block"><a id="aCadDocumentosAcademicos" runat ="server" href="admArquivoGestao.aspx" onclick="fProcessando()"><i class="fa fa-circle-o text-aqua"></i><span>Informações Acadêmicas</span>      </a></li>   <%--<span class="pull-right-container"><span class="label pull-right bg-green"><span style="font-size:x-small;letter-spacing:0.1em;" class="piscante">new</span></span></span>--%>
+                                <li id="liCadUsuario" visible="false" runat="server"><a id="aCadUsuario" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-aqua"></i><span>Usuários</span> </a></li>
+                                <li id="liCadTela" visible="false" runat="server"><a id="aCadTela" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-aqua"></i><span>Telas</span> </a></li>
+                                <li id="liCadGrupo" visible="false" runat="server"><a id="aCadGrupo" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-aqua"></i><span>Grupos</span> </a></li>
+                            </ul>
+                        </li>
+
+                        <li visible="false" id="liProcessoSeletivo" runat="server" class="treeview" >
+                            <a href="#"><i class="fa fa-university text-fuchsia fa-lg"></i><span style="font-size:medium">&nbsp;&nbsp;&nbsp;Processo Seletivo</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liPeriodosIncricao"  visible="false" runat="server"><a id="aPeriodosIncricao" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-fuchsia"></i> <span>Períodos de Inscrição</span></a></li>
+                                <li id="liRelDatasEntervista"  visible="false" runat="server"><a id="aRelDatasEntervista" runat ="server" href="#"><i class="fa fa-angle-right"></i> <span>Relatórios de Datas<br /> para Entrevista</span></a></li>
+                                <li id="liRelInscritos"  visible="false" runat="server"><a id="aRelInscritos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-fuchsia"></i> <span>Relação de Inscritos</span></a> </li>
+                            </ul>
+                        </li>
+
+                        <%--Alunos Início--%>
+                        <li id="liAlunoDadosCadastrais" visible="false" runat="server"><a id="aAlunoDadosCadastrais" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-user-circle-o  fa-lg text-blue"></i><span>&nbsp;&nbsp;Dados Cadastrais</span> </a></li>
+                        <li id="liAlunoSitAcademica" visible="false" runat="server"><a id="aAlunoSitAcademica" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-graduation-cap  fa-lg text-yellow"></i><span>&nbsp;&nbsp;Situação Acadêmica</span> </a></li>
+                        <li id="liAlunoDocumentosAcademicos" visible="false" runat="server"><a id="aAlunoDocumentosAcademicos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-book  fa-lg text-maroon"></i><span>&nbsp;&nbsp;Informações Acadêmicas</span> </a></li>
+                        <li id="liAlunoBoletoFipt" visible="false" runat="server"><a id="aAlunoBoletoFipt" runat ="server" href="javascript:fBoletoFipt();" onclick="fProcessando()"><i class="fa fa-money fa-lg text-green"></i><span>&nbsp;&nbsp;Boletos </span> <span class="pull-right-container"><small class="label pull-right bg-green">NOVO</small></span></a></li>
+                        <%--Alunos Início--%>
+
+                        <li visible="false"  id="liAcademico" runat="server" >
+                            <a href="#"><i class="fa fa-graduation-cap text-primary fa-lg"></i><span style="font-size:medium">&nbsp;&nbsp;&nbsp;Acadêmico</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="li1Alunos" visible="false" runat="server"><a id="a1Alunos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-primary"></i><span>Alunos</span> </a></li>
+                                <li id="li2Professores" visible="false"  runat="server"><a id="a2Professores" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-primary"></i><span>Professores</span> </a></li>
+                                <li id="li3Disciplinas" visible="false"  runat="server"><a id="a3Disciplinas" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-primary"></i><span>Disciplinas</span> </a></li>
+                                <li id="li4TipoCursos" visible="false"  runat="server"><a id="a4TipoCursos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-primary"></i><span>Tipo de Curso</span> </a></li>
+                                <li id="li4Cursos" visible="false"  runat="server"><a id="a4Cursos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-primary"></i><span>Cursos</span> </a></li>
+                                <li id="li5AreaConcentracao" visible="false"  runat="server"><a id="a5AreaConcentracao" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-primary"></i><span>Áreas de Concentração</span> </a></li>
+                                <li id="li6Quadrimestres" visible="false"  runat="server"><a id="a6Quadrimestres" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-primary"></i><span>Períodos</span> </a></li>
+                                <li id="li7Turmas" visible="false"  runat="server"><a id="a7Turmas" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-primary"></i><span>Turmas</span> </a></li>
+                                <li id="li8Oferecimentos" visible="false"  runat="server"><a id="a8Oferecimentos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-primary"></i><span>Oferecimentos</span> </a></li>
+                                <div id="divHrRelatorioAcademico" runat="server" visible="false">
+                                    <br />
+                                    <hr />
+                                    <br />
+                                </div>
+                                <li id="li9RelatorioAlunos" visible="false"  runat="server"><a id="a9RelatorioAlunos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-info"></i><span>Relatório de Alunos</span> </a></li>
+                                
+                                <li id="liCadRelProfessor" class="treeview" visible="false" runat="server">
+                                    <a href="#">
+                                        <i class="fa fa-circle-o text-info"></i> Relatório de Professores
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li id="liCadRelProfessorOferecimentos"><a id="aCadRelProfessorOferecimento" href="#" runat="server" onclick="fProcessando()"><i class="fa fa-circle-o text-info "></i> Oferecimentos</a></li>
+                                        <li id="liCadRelProfessorOrientacoes"><a id="aCadRelProfessorOrientacoes" href="#" runat="server" onclick="fProcessando()"><i class="fa fa-circle-o text-info "></i> Orientações</a></li>
+                                        <li id="liCadRelProfessorQualificacaoDefesa"><a id="aCadRelProfessorQualificacaoDefesa" href="#" runat="server" onclick="fProcessando()"><i class="fa fa-circle-o text-info "></i> Qualif./Defesa</a></li>
+                                        <li id="liCadRelProfessorAulasMarcadas"><a id="aCadRelProfessorAulasMarcadas" href="#" runat="server" onclick="fProcessando()"><i class="fa fa-circle-o text-info "></i> Aulas Marcadas <span class="pull-right-container"><small class="label pull-right bg-green">NOVO</small></span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li id="liCadRelBanca" class="treeview" visible="false" runat="server">
+                                    <a href="#">
+                                        <i class="fa fa-circle-o text-info "></i> Relatório de Bancas
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li id="liCadRelBancaQualificacaoDefesa"><a id="aCadRelBancaQualificacaoDefesa" href="#" runat="server" onclick="fProcessando()"><i class="fa fa-circle-o text-info"></i> Qualif./Defesa</a></li>
+                                        <li id="liCadRelBancaMembros"><a id="aCadRelBancaMembros" href="#" runat="server" onclick="fProcessando()"><i class="fa fa-circle-o text-info"></i> Membros</a></li>
+                                    </ul>
+                                </li>
+                                
+                                
+                                <li id="li23OutrosRelatorios" class="treeview" runat="server">
+
+                                </li>
+
+
+                                <li id="li9DatasdeAula" class="hidden" runat="server"><a id="a9DatasdeAula" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>9. Datas de Aula</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li10MatriculaTurma" class="hidden" runat="server"><a id="a10MatriculaTurma" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>10. Matrícula na Turma</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li11MatriculaOferecimento" class="hidden" runat="server"><a id="a11MatriculaOferecimento" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>11. Matrícula no Oferecimento</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li12SituacaoMatricula" class="hidden" runat="server"><a id="a12SituacaoMatricula" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>12. Situação da Matrícula</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li13CadastroNotas" class="hidden" runat="server"><a id="a13CadastroNotas" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>13. Cadastro de Notas</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li14ListaPresenca" class="hidden" runat="server"><a id="a14ListaPresenca" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>14. Lista de Presença</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li15CadPresencaAluno" class="hidden" runat="server"><a id="a15CadPresencaAluno" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>15. Cad. Presença Aluno</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li16CadPresencaProfessor" class="hidden" runat="server"><a id="a16CadPresencaProfessor" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>16. Cad. Presença Professor</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li17RelatorioAlunos" class="hidden" runat="server"><a id="a17RelatorioAlunos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>9. Relatório de Alunos</span> <span class="pull-right-container"><small class="label pull-right alert-info"></small></span></a></li>
+                                <li id="li18HistoricoEscolar" class="hidden" runat="server"><a id="a18HistoricoEscolar" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>18. Histórico Escolar</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li19CadastroOrientacao" class="hidden" runat="server"><a id="a19CadastroOrientacao" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>19. Cadastro de Orientação</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li20CadastroBancas" class="hidden" runat="server"><a id="a20CadastroBancas" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>20. Cadastro de Bancas</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li21ReunioesCPG" class="hidden" runat="server"><a id="a21ReunioesCPG" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>21. Reuniões CPG</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="li22Contratos" class="hidden" runat="server"><a id="a22Contratos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>22. Contratos</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                
+                                <li id="li24CertificadoTitulacao" class="hidden" runat="server"><a id="a24CertificadoTitulacao" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>24. Certificado Titulação</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="liPeriodoRelDissertacao" class="hidden" runat="server"><a id="aPeriodoRelDissertacao" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>25. Período Relatórios <br />Dissertação</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+
+                                <li id="liDadosCadastrais" class="hidden" runat="server"><a id="aDadosCadastrais" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>Dados Cadastrais</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="liHistoricoEscolar" class="hidden" runat="server"><a id="aHistoricoEscolar" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>Histórico Escolar</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="liMatriculaOnLine" class="hidden" runat="server"><a id="aMatriculaOnLine" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>Matrícula on-line</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="liRelAcompanhamentoDissertacao" class="hidden" runat="server"><a id="aRelAcompanhamentoDissertacao" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>Relatório<br/>Acompanhamento Dissertação</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="liRequerimentos" class="hidden" runat="server"><a id="aRequerimentos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>Requerimentos</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+
+                                <li id="liAprovacaoNotas" class="hidden" runat="server"><a id="aAprovacaoNotas" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>Aprovação de Notas</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="liAprovacaoRelDissertacao" class="hidden" runat="server"><a id="aAprovacaoRelDissertacao" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>Aprovação<br/>Relatório Dissertação</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="liAtribuicaoNotas" class="hidden" runat="server"><a id="aAtribuicaoNotas" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>Atribuição de Notas</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                                <li id="liDadosCadastraisProfessor" class="hidden" runat="server"><a id="aDadosCadastraisProfessor" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-angle-right"></i><span>Dados Cadastrais</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+
+                            </ul>
+                        </li>
+
+                        <li visible="false" id="liMatricula" runat="server" >
+                            <a href="#"><i class="fa fa-calendar-check-o text-yellow fa-lg"></i><span style="font-size:medium">&nbsp;&nbsp;&nbsp;Matrícula</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liPeriodoMatricula" visible="false" runat="server"><a id="aPeriodoMatricula" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-yellow"></i> <span>Período de Matrícula</span> </a></li>
+                                <li id="liConfirmacaoOferecimento" visible="false" runat="server"><a id="aConfirmacaoOferecimento" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-yellow"></i> <span>Confirmação de Oferecimento</span> </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview" Visible="false" id="liFinanceiro" runat="server" >
+                            <a href="#"><i class="fa fa-money text-green fa-lg"></i><span style="font-size:medium">&nbsp;&nbsp;&nbsp;Financeiro</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liCustosCurso" Visible="false" runat="server"><a id="aCustosCurso" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-green"></i> <span>Custos por Curso</span></a></li>
+                                <li id="liPessoaJuridica" Visible="false" runat="server"><a id="aPessoaJuridica" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-green"></i> <span>Pessoa Jurídica</span></a></li>
+                                <li id="liCalculoCustos" Visible="false" runat="server"><a id="aCalculoCustos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-green"></i> <span>Rel. Pagto de Docentes</span></a></li>
+                                <li id="liExtratoProfessor" Visible="false" runat="server"><a id="aExtratoProfessor" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-green"></i> <span>Extrato do Professor</span> </a></li><%--<span class="pull-right-container"><small class="label pull-right bg-green"><span style="font-size:small;letter-spacing:0.1em;" class="piscante">novo</span></small></span></a></li>--%>
+                                <li id="liSolicitacaoPagamentoProfessor" Visible="false" runat="server"><a id="aSolicitacaoPagamentoProfessor" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-green"></i> <span>Solicitação Pagamento<br />Professor</span> </a></li><%-- <span class="pull-right-container"><small class="label pull-right bg-green"><span style="font-size:small;letter-spacing:0.1em;" class="piscante">novo</span></small></span></a></li>--%>
+                                <li id="liDataBloqueio" Visible="false" runat="server"><a id="aDataBloqueio" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-green"></i> <span>Data para Bloqueio</span></a></li>
+<%--                                <li id="liDataBloqueio " Visible="false" runat="server"><a id="aDataBloqueio" runat ="server" href="#"><i class="fa fa-angle-right"></i> <span>6. Data para Bloqueio </span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>--%>
+                                <li id="liListaInadimplentesFIPT" Visible="false" runat="server"><a id="aListaInadimplentesFIPT" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-green"></i> <span>Lista de Inadimplentes<br /> FIPT</span></a></li>
+                                <li id="liControleInadimplentes" Visible="false" runat="server"><a id="aControleInadimplentes" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-green"></i> <span>Controle de Inadimplentes</span></a></li>
+                                <li id="liRelatorioBoletos" Visible="false" runat="server"><a id="aRelatorioBoletos" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-green"></i> <span>Relatório de Boletos</span></a></li>
+                                <li id="liBoletoMesCorrente" Visible="false" runat="server"><a id="aBoletoMesCorrente" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-green"></i> <span>Emissão Boleto Mês Corrente</span></a></li>
+                            </ul>
+                        </li>
+
+                        <li class="hidden" id="liRelatoriosGerenciaisGrupo" runat="server" >
+                            <a href="#"><i class="fa fa-edit text-aqua fa-lg"></i><span style="font-size:medium">&nbsp;&nbsp;&nbsp;Relatórios Gerenciais</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liRelatoriosGerenciais" class="hidden" runat="server"><a id="aRelatoriosGerenciais" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-light-blue"></i> <span>Relatórios Gerenciais</span> <span class="pull-right-container"><small class="label pull-right bg-green">breve</small></span></a></li>
+                            </ul>
+                        </li>
+
+                        <li Visible="false" id="liMenuMonitorGrupo" runat="server" >
+                            <a href="#"><i class="fa fa-television text-red fa-lg"></i><span style="font-size:medium">&nbsp;&nbsp;&nbsp;Monitor</span> <%--<span class="pull-right-container"><small class="label pull-right bg-green"><span style="font-size:small;letter-spacing:0.1em;" class="piscante">novo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></small></span></span>--%>    
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liMonitorCadastro" Visible="false" runat="server"><a id="aMonitorCadastro" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-red"></i> <span>Eventos</span></a></li>
+                                <li id="liMonitorVideo" Visible="false" runat="server"><a id="aMonitorVideo" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-red"></i> <span>Vídeos</span></a></li>
+                                <li id="liMonitorLetreiro" Visible="false" runat="server"><a id="aMonitorLetreiro" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-red"></i> <span>Letreiro</span></a></li>
+                                <li id="liMonitorExibir" Visible="false" runat="server"><a id="aMonitorExibir" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-red"></i> <span>Exibir</span></a></li>
+                            </ul>
+                        </li>
+
+                        <li Visible="false" id="liMenuOutrosGrupo" runat="server" class="">
+                            <a href="#"><i class="fa fa-cubes text-purple fa-lg"></i><span style="font-size:medium">&nbsp;&nbsp;&nbsp;Diversos</span> <%--<span class="pull-right-container"><small class="label pull-right bg-green"><span style="font-size:small;letter-spacing:0.1em;" class="piscante">novo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></small></span></span>--%>    
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="liOutrosCertificado" Visible="false" runat="server"><a id="aOutrosCertificado" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-purple"></i> <span>Certificados</span></a></li>
+                                <li id="liOutrosCadAutAluno" Visible="false" runat="server"><a id="aOutrosCadAutAluno" runat ="server" href="#" onclick="fProcessando()"><i class="fa fa-circle-o text-purple"></i> <span>Cad. Aut. Alunos</span></a></li>
+                            </ul>
+                        </li>
+
+                        <%--<li class="active"><a href="#"><i class="fa fa-link"></i><span>Link</span></a></li>
+                        <li><a href="#"><i class="fa fa-link"></i><span>Another Link</span></a></li>--%>
+                        
+                    </ul>
+                    <!-- /.sidebar-menu -->
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <div class="modal fade" id="divModalAlterarSenha" tabindex="-1" role="dialog" aria-labelledby="CabecalhoMensagem" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-warning">
+                        <h4 class="modal-title" id="HD"><i class="fa fa-key"></i>&nbsp;Alteração de Senha
+                        </h4>
+                    </div>
+                    <div id="DivD" class="modal-body">
+                        <label id="labelDescricaoEvidencia"></label>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                Senha Atual&nbsp;
+                                <div class="hidden">
+                                    <input name="txtLogin" id="txtLogin" type="text" class="form-control" value="" />
+                                </div>
+                                <asp:TextBox runat="server" class="form-control input-sm key" ID="txtSenhaAtual" size="4" MaxLength="10" value="" ></asp:TextBox>
+                            </div>
+                            <div class="hidden-lg hidden-md hidden-sm">
+                                <br />
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                Nova Senha&nbsp;
+                                                        <%--<input name="Ano_Fim" type="text" class="form-control" value="" maxlength="4" size="4" style="direction: rtl" onkeypress="if (document.all) {vchar=window.event.keyCode} else {vchar=event.which};if (vchar < 48 || vchar > 57) {if (vchar != 8 &amp;&amp; vchar != 0) {return false}}">--%>
+                                <div class="hidden">
+                                    <input name="txtLogin1" id="txtLogin1" type="text" class="form-control" value="" />
+                                </div>
+                                <asp:TextBox runat="server" class="form-control input-sm key" ID="txtNovaSenha" size="4" MaxLength="10" value="" ></asp:TextBox>
+                            </div>
+                            <div class="hidden-lg hidden-md hidden-sm">
+                                <br />
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                Confirma Senha
+                                                        <%--<input name="Ano_Fim" type="text" class="form-control" value="" maxlength="4" size="4" style="direction: rtl" onkeypress="if (document.all) {vchar=window.event.keyCode} else {vchar=event.which};if (vchar < 48 || vchar > 57) {if (vchar != 8 &amp;&amp; vchar != 0) {return false}}">--%>
+                                <div class="hidden">
+                                    <input name="txtLogin2" id="txtLogin2" type="text" class="form-control" value="" />
+                                </div>
+                                <asp:TextBox runat="server" class="form-control input-sm key" ID="txtConfirmaSenha" size="4" MaxLength="10" value="" ></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <div class="pull-left">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <i class="fa fa-close"></i>&nbsp;Fechar</button>
+                        </div>
+
+                        <div class="pull-right">
+                            <button type="button" runat ="server" id="btnAlteraSenha" onserverclick="btnAlteraSenha_click" class="btn btn-success" data-dismiss="modal">
+                                <i class="fa fa-check"></i>&nbsp;Confirma
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <%--<section class="content-header">
+                    <h1><label id="lblTitulo"></label><small>Optional description</small></h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i>Level</a></li>
+                        <li class="active">Here</li>
+                    </ol>
+                </section>--%>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <!-- Your Page Content Here -->
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <!-- To the right -->
+                <div class="pull-right hidden-xs">
+                    Versão 1.0.0
+                </div>
+                <!-- Default to the left -->
+                <strong>Copyright &copy; <script>new Date().getFullYear()>2017&&document.write(new Date().getFullYear());</script> <a target="_blank" href="https://www.ipt.br">ipt</a></strong> 
+            </footer>
+
+            <!-- Control Sidebar - Menu de Lateral de controle -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Create the tabs -->
+                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                    <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-wrench"></i></a></li>
+                    <%--<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>--%>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <!-- Home tab content -->
+                    <div class="tab-pane active" id="control-sidebar-home-tab">
+<%--                        <h3 class="control-sidebar-heading">Recent Activity</h3>
+                        <ul class="control-sidebar-menu">
+                            <li>
+                                <a href="javascript::;">
+                                    <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                                        <p>Will be 23 on April 24th</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- /.control-sidebar-menu -->
+
+                        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                        <ul class="control-sidebar-menu">
+                            <li>
+                                <a href="javascript::;">
+                                    <h4 class="control-sidebar-subheading">Custom Template Design
+                                        <span class="pull-right-container">
+                                            <span class="label label-danger pull-right">70%</span>
+                                        </span>
+                                    </h4>
+
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>--%>
+
+
+
+                        <h3 class="control-sidebar-heading">Skins</h3>
+                        <ul class="list-unstyled clearfix">
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-blue');" data-skin="skin-blue" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div><span style="display: block; width: 20%; float: left; height: 7px; background: #367fa9;"></span><span class="bg-light-blue" style="display: block; width: 80%; float: left; height: 7px;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #222d32;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin">Azul</p>
+                            </li>
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-black');" data-skin="skin-black" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix"><span style="display: block; width: 20%; float: left; height: 7px; background: #fefefe;"></span><span style="display: block; width: 80%; float: left; height: 7px; background: #fefefe;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #222;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin">Branco</p>
+                            </li>
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-purple');" data-skin="skin-purple" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div><span style="display: block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span><span class="bg-purple" style="display: block; width: 80%; float: left; height: 7px;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #222d32;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin">Roxo</p>
+                            </li>
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-green');" data-skin="skin-green" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div><span style="display: block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span><span class="bg-green" style="display: block; width: 80%; float: left; height: 7px;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #222d32;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin">Verde</p>
+                            </li>
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-red');" data-skin="skin-red" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div><span style="display: block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span><span class="bg-red" style="display: block; width: 80%; float: left; height: 7px;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #222d32;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin">Vermelho</p>
+                            </li>
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-yellow');" data-skin="skin-yellow" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div><span style="display: block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span><span class="bg-yellow" style="display: block; width: 80%; float: left; height: 7px;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #222d32;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin">Amarelo</p>
+                            </li>
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-blue-light');" data-skin="skin-blue-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div><span style="display: block; width: 20%; float: left; height: 7px; background: #367fa9;"></span><span class="bg-light-blue" style="display: block; width: 80%; float: left; height: 7px;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin" style="font-size: 12px">Azul Light</p>
+                            </li>
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-black-light');" data-skin="skin-black-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix"><span style="display: block; width: 20%; float: left; height: 7px; background: #fefefe;"></span><span style="display: block; width: 80%; float: left; height: 7px; background: #fefefe;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin" style="font-size: 12px"><small>Branco Light</small></p>
+                            </li>
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-purple-light');" data-skin="skin-purple-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div><span style="display: block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span><span class="bg-purple" style="display: block; width: 80%; float: left; height: 7px;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin" style="font-size: 12px">Roxo Light</p>
+                            </li>
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-green-light');" data-skin="skin-green-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div><span style="display: block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span><span class="bg-green" style="display: block; width: 80%; float: left; height: 7px;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin" style="font-size: 12px">Verde Light</p>
+                            </li>
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-red-light');" data-skin="skin-red-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div><span style="display: block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span><span class="bg-red" style="display: block; width: 80%; float: left; height: 7px;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin" style="font-size: 12px">Vermelho Light</p>
+                            </li>
+                            <li style="float: left; width: 33.33333%; padding: 5px;"><a href="javascript:switchBodyColor('skin-yellow-light');" data-skin="skin-yellow-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                                <div><span style="display: block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span><span class="bg-yellow" style="display: block; width: 80%; float: left; height: 7px;"></span></div>
+                                <div><span style="display: block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display: block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div>
+                            </a>
+                                <p class="text-center no-margin" style="font-size: 12px;">Amarelo Light</p>
+                            </li>
+                        </ul>
+
+
+                        <!-- /.control-sidebar-menu -->
+
+                    </div>
+                    <!-- /.tab-pane -->
+                    <!-- Stats tab content -->
+                    <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                    <!-- /.tab-pane -->
+                    <!-- Settings tab content -->
+                    <div class="tab-pane" id="control-sidebar-settings-tab">
+                            <h3 class="control-sidebar-heading">General Settings</h3>
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Report panel usage
+                                    <input type="checkbox" class="pull-right" checked="checked"/>
+                                </label>
+
+                                <p>
+                                    Some information about this general settings option
+                                </p>
+                            </div>
+                            <!-- /.form-group -->
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+            </aside>
+            <!-- /.control-sidebar - Menu de Lateral de controle -->
+            <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+            <div class="control-sidebar-bg"></div>
+        </div>
+<!-- ./wrapper -->
+
+        <div class="modal fade" id="divModalErroSenha" tabindex="-1" role="dialog" aria-labelledby="CabecalhoMensagem" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger">
+                        <h4 class="modal-title" id="H1"><i class="fa fa-key"></i>&nbsp;Alteração de Senha
+                        </h4>
+                    </div>
+                    <div id="Div2" class="modal-body">
+                        <label id="labelErroAlteraSenha"></label>
+                    </div>
+                    <div class="modal-footer">
+
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick ="AbreAlteraSenha();">
+                                <i class="fa fa-close"></i>&nbsp;Fechar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="divModalTrocaFoto" tabindex="-1" role="dialog" aria-labelledby="CabecalhoMensagem" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-yellow">
+                        <h4 class="modal-title"><i class="fa fa-photo"></i>&nbsp;Alteração de foto
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>
+                                    Altere sua foto.
+                                </p>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>
+                                    Para alterar sua foto clique na imagem situada no menu ao lado esquerdo.<br />
+                                    <small>(exemplo abaixo) </small>
+                                </p>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-lg-2 text-center">
+                                <p>
+                                    <i class="fa fa-hand-o-down fa-2x"></i>
+                                </p>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <img src="img/trocarfoto.png" class="img-responsive" />
+                            </div>
+                        </div>
+                        <br />
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick ="">
+                                <i class="fa fa-close"></i>&nbsp;Fechar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="divModalAlteraDadosFotoMaster" tabindex="-1" role="dialog" aria-labelledby="CabecalhoMensagem" aria-hidden="true" style="display: none;" data-backdrop="static" data-keyboard="false">
+
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header bg-info">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            ×
+                        </button>
+
+                        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-camera"></i>&nbsp;Trocar Foto
+                        </h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <%--<div class="col-md-1"></div>--%>
+                                    <div class="col-md-6">
+                                        <strong>Foto atual</strong><br />
+                                        <img id="imgFotoOriginal" alt="Foto atual" runat="server" class="img-responsive" title="Foto atual" style="max-height: 500px" />
+                                        <br />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong>Nova foto</strong><br />
+                                        <div id="fileUploadMaster" style="vertical-align: top">
+                                            <h5 id="errorBlock" class="file-error-message" style="display: none;"></h5>
+                                            <span class="file-input file-input-new">
+                                                <div class="row ">
+                                                    <div class="col-md-12">
+                                                        <div id="divImgPrwMaster" class="file-preview" style="display: none">
+                                                            <div class="" id="divImgPreview">
+                                                                <img id="imgprw" alt="" runat="server" class="img-responsive" style="max-height: 500px" />
+                                                            </div>
+                                                            <br />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row " id="divBntLocalizarMaster" style="display: block">
+                                                    <div class="col-md-12 text-center">
+                                                        <br />
+                                                        <button type="button" id="btnLocalizar" class="btn btn-primary btn-md"
+                                                            onclick="javascript:document.getElementById('fileArquivoParaGravarMaster').click();">
+                                                            <i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;Localizar nova Foto …
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row " id="divBotoesMaster" style="display: none">
+                                                    <div class="col-md-6">
+                                                        <button type="button" id="btnLimparArquivo" title="Excluir foto selecionada" onclick="fLimparArquivoMaster()" class="btn btn-default fileinput-remove fileinput-remove-button center-block">
+                                                            <i class="glyphicon glyphicon-trash"></i>&nbsp;Excluir
+                                                        </button>
+                                                    </div>
+                                                    <div class="hidden-lg hidden-md">
+                                                        <br />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <button type="button" id="btnGirarArquivo" title="Girar foto selecionada" onclick="fGirarArquivoMaster()" class="btn btn-default fileinput-remove fileinput-remove-button center-block">
+                                                            <i class="fa fa-retweet"></i>&nbsp;Girar
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </span>
+                                            <br />
+                                            <div id="divMensagensMaster">
+                                                <small class="text-bold"><i class="fa fa-check piscante"></i> Procure colocar uma imagem mais quadrada possível para que sua foto não fique distorcida!</small><br /><br />
+                                                <small><i class="fa fa-check"></i> Imagens com tamanho máximo de 1 Megabyte!</small><br />
+                                                <small><i class="fa fa-check"></i> Somente imagens com extenção "JPG" ou "JEPG" ou "PNG"!</small><br />
+                                                <small><i class="fa fa-check"></i> Evite nome de arquivo com caracteres especiais!</small><br />
+                                            </div>
+                                            <br />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <div class="pull-left">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <i class="fa fa-close"></i>&nbsp;Fechar
+                            </button>
+                        </div>
+
+                        <div class="pull-right" id="divBotaoSalvarMaster" style="display: none">
+                            <button type="button" id="bntSalvarDadosFotoOffLine" runat="server" title="Salvar foto selecionada" onclick="fSalvarDadosFotoMaster();" class="btn btn-primary"> <%--document.getElementById('<%=bntSalvarDadosFoto.ClientID%>').click()--%>
+                                <i class="fa fa-save"></i>&nbsp;Salvar Foto
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.modal-content -->
+            </div>
+        <!-- /.modal-dialog -->
+
+        </div>
+
+        <div class="modal fade" id="divModalFotoMaster" tabindex="-1" role="dialog" aria-labelledby="CabecalhoMensagem" aria-hidden="true" style="display: none;" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header alert-warning">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title"><i class="fa fa fa-file-image-o"></i> Problema na escolha da Foto</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <b>Prezado usuário,</b>
+                            <br/>
+                            <br/>
+                        </p>
+                       
+                        <div class="row" style:"display: none;" >
+
+                            <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo inválido!</b>
+                            <br/>
+                            <br/>
+                            <p>
+                                <div id="divExtencaoMaster" class="col-lg-12" style:"display: none;" >
+                                    Você deve selecionar apenas imagens com extenção: "<b>jpg</b>" ou "<b>jpeg</b> ou "<b>png</b>".
+                                </div>
+
+                                <div id="divTamanhoMaster" class="col-lg-12" style:"display: none;" >
+                                    Você deve selecionar imagens com tamanho máximo de <b>1 Megabyte</b>.
+                                </div>
+                                
+                            </p>
+                            <br/>
+                        </div>
+                        
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <i class="fa fa-close"></i>&nbsp;Fechar
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        
+        </div>
+
+        <div class="modal fade" id="divModalSucessoSenha" tabindex="-1" role="dialog" aria-labelledby="CabecalhoMensagem" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-success">
+                        <h4 class="modal-title" id="H2"><i class="fa fa-key"></i>&nbsp;Alteração de Senha
+                        </h4>
+                    </div>
+                    <div id="Div3" class="modal-body">
+                        Senha alterada com sucesso.
+                    </div>
+                    <div class="modal-footer">
+
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <i class="fa fa-close"></i>&nbsp;Fechar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="divModalAvisa" tabindex="-1" role="dialog" aria-labelledby="CabecalhoMensagem" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-info">
+                        <h4 class="modal-title"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;<label id="lblTituloAvisa"></label>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <label id="lblCorpoAvisa"></label>
+                    </div>
+                    <div class="modal-footer">
+
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <i class="fa fa-close"></i>&nbsp;Fechar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="divDicasBootstrap" tabindex="-1" role="dialog" aria-labelledby="CabecalhoMensagem" aria-hidden="true" style="display: none;" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-purple">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title"><span><i class="fa fa-info-circle fa-lg"></i> Dicas Bootstrap</span> </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                
+                                <div class="nav-tabs-custom">
+                                    <ul class="nav nav-tabs">
+                                        <li id="tabOQE" class="active"><a href="#tab_OQE" data-toggle="tab"><strong>O que é</strong></a></li>
+                                        <li id="tabColunas"><a href="#tab_Colunas" data-toggle="tab"><strong>Grades <small class="text-primary">(Linhas x Colunas)</small> </strong></a></li>
+                                        <li id="tabHiperlinks"><a href="#tab_Hiperlinks" data-toggle="tab"><strong><em>Hiperlinks</em> <small class="text-primary">(tipo botão)</small></strong></a></li>
+                                        <li id="tabImagens"><a href="#tab_Imagens" data-toggle="tab"><strong>Imagens</strong></a></li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="tab_OQE">
+                                            <h3 class="box-title">O que é</h3>
+                                            <div class="box box-primary">
+                                                <div class="box-header">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <p>
+                                                                Bootstrap é um framework front-end interativo e responsivo projetado para facilitar o desenvolvimento de páginas web e outros elementos. 
+                                                            </p>
+                                                            <hr />
+
+                                                            <h4><strong>Tamanhos</strong></h4>
+                                                            <p>
+                                                                Tamanhos de telas de dispositivos definidos para criar os principais pontos de interrupção no sistema de <em>grid</em> (linhas x colunas).
+                                                            </p>
+
+                                                            <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="cm">/* Dispositivos extra pequenos (<strong>celulares</strong>, dispositivos com tela menor que 768px) */</span>
+<span class="cm">/* abreviatura - <strong>xs</strong> (E<b>x</b>tra <b>s</b>mall devices) - (Se não houver definição esse é o padrão adotado) */</span>
+
+<span class="cm">/* Dispositivos pequenos (<strong>tablets</strong>, telas com 768px ou maiores) */</span>
+<span class="k">/* abreviatura - <strong>sm</strong> (<b>Sm</b>all devices) */</span>
+
+<span class="cm">/* Dispositivos médios (<strong>notebooks</strong>, telas com 992px ou maiores) */</span>
+<span class="k">/* abreviatura - <strong>md</strong> (<b>M</b>e<b>d</b>ium devices) */</span>
+
+<span class="cm">/* Dispositivos grandes (<strong>desktops</strong>, telas com 1200px ou maiores) */</span>
+<span class="k">/* abreviatura - <strong>lg</strong> (<b>L</b>ar<b>g</b>e devices) */</span></code></pre></figure>
+                                                            <hr />
+
+                                                            <h4><strong>Navegadores Suportados</strong></h4>
+
+                                                            <h5><strong> Dispositivos móveis</strong></h5>
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td></td>
+                                                                            <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chrome</font></font></th>
+                                                                            <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FireFox</font></font></th>
+                                                                            <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Safari</font></font></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <th scope="row"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Android</font></font></th>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Suportado</td>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Suportado</font></font></td>
+                                                                            <td class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">N / D</font></font></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th scope="row"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">iOS</font></font></th>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Suportado</font></font></td>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Suportado</font></font></td>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Suportado</font></font></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <br />
+                                                            <h5><strong> Navegadores de Desktops</strong></h5>
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td></td>
+                                                                            <th>Chrome</th>
+                                                                            <th>Firefox</th>
+                                                                            <th>Internet Explorer</th>
+                                                                            <th>Edge</th>
+                                                                            <th>Opera</th>
+                                                                            <th>Safari</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <th scope="row">Mac</th>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Suportado</td>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Suportado</td>
+                                                                            <td class="text-muted">N/A</td>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Suportado</td>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Suportado</td>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Suportado</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th scope="row">Windows</th>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Suportado</td>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Suportado</td>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Suportado</td>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Suportado</td>
+                                                                            <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Suportado</td>
+                                                                            <td class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Não suportado</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="tab_Colunas">
+                                            <h3 class="box-title">Grades <small class="text-primary">(Linhas x Colunas)</small></h3>
+                                            <div class="box box-primary">
+                                                <div class="box-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <p>
+                                                                No Boottrap as <em>grids</em> (grades) são compostas de linhas (row) com 12 colunas (col) de tamanhos ajustáveis.<br />
+                                                                No exemplo abaixo temos uma linha com 12 colunas de tamanhos iguais ocupando 1 espaço cada uma. E se comportarão comforme o desejado para dispositivos do tipo ".md", ou seja, notebooks e desktops (telas a partir de 992px).
+                                                                <br />Em dispositivos com telas abaixo de 992px (tablets e celulares) cada coluna se comportará como se ocupassem os 12 espaços, ou seja, as colunas ficarão uma em ciam da outrao ("empilhadas").
+                                                                <div class="row" style="background-color:lightgray;border-color:darkgray">
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                    <div class="col-md-1" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-1</font></font></div>
+                                                                </div>
+                                                            </p>
+                                                            <br />
+
+                                                            <p>
+                                                                Abaixo alguns outros exemplos de se dividir as colunas:
+                                                                <div class="row" style="background-color:lightgray;border-color:darkgray">
+                                                                    <div class="col-md-8" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-8</font></font></div>
+                                                                    <div class="col-md-4" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-4</font></font></div>
+                                                                </div>
+                                                                <br />
+
+                                                                <div class="row" style="background-color:lightgray;border-color:darkgray">
+                                                                    <div class="col-md-4" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-4</font></font></div>
+                                                                    <div class="col-md-4" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-4</font></font></div>
+                                                                    <div class="col-md-4" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-4</font></font></div>
+                                                                </div>
+                                                                <br />
+
+                                                                <div class="row" style="background-color:lightgray;border-color:darkgray">
+                                                                    <div class="col-md-6" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-6</font></font></div>
+                                                                    <div class="col-md-6" style="border:1px solid darkgray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.col-md-6</font></font></div>
+                                                                </div>
+                                                            </p>
+                                                            <br />
+                                                            Veja o código referente as linhas e colunas acima:
+                                                            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;br /</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-8"</span><span class="nt">&gt;</span>.col-md-8<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;br /</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;br /</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-6"</span><span class="nt">&gt;</span>.col-md-6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-6"</span><span class="nt">&gt;</span>.col-md-6<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+                                                            <br />
+                                                            Se desejar manter a configuração das colunas mesmo em dispositivos menores basta trocar a abreviação <b>"md"</b> por <b>"xs"</b>.<br />
+                                                            Nesse caso se a configuração for de duas colunas, mesmo em um celular, essa configuração se manterá.
+
+                                                            <br />
+                                                            <br />
+                                                            <p>Outras dicas:</p>
+                                                            <p>O código <code class="w3-codespan">&lt;br /&gt;</code> (<em><b>b</b>reak <b>r</b>ow</em>) imprime uma quebra de linha (espaço em branco).</p>
+
+                                                            Para se imprimir uma "quebra de linha" (espaço) entre colunas que se "empilham" em dispositivos pequenos (celulares e tablets) e se "transformam" em colunas de tamanho "col-12", deve se inserir uma "div" com as classes "hidden-lg e hidden-md" e com uma "quebra de linha" dentro dessa "div", assim a quebra de linha não aparecerá em dispositivos médio e grandes, ou seja, aparecerá somente nos dispositivos pequenos e extra pequenos.<br />
+                                                            <br />
+                                                            Veja o exemplo abaixo onde, em dispositivos médios e grandes, tem uma "linha" com duas "colunas", uma ao lado da outra. E em dispositivos pequenos essas colunas se "empilham", uma em cima da outra, mas com uma quebra de linha (espaço) entre elas:
+                                                            <br />
+                                                            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-6"</span><span class="nt">&gt;</span>.col-md-6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hidden-lg hidden-md"</span><span class="nt">&gt;</span><span class="nt">&lt;br /</span><span class="nt">&gt;</span><span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-6"</span><span class="nt">&gt;</span>.col-md-6<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="tab_Hiperlinks">
+                                            <h3 class="box-title"><em>Hiperlinks</em> <small class="text-primary">(tipo botão)</small></h3>
+                                            <div class="box box-primary">
+                                                <div class="box-header">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <p>
+                                                                O Bootstrap permite se possa criar um <em>hiperlink</em> com  aparência de um botão.<br />
+                                                                Veja exemplos abaixo:
+                                                                <div class="row">
+                                                                    <div class="col-xs-2">
+                                                                        <a type="button" target="_blank" class="btn btn-success" href="https://www.w3schools.com/w3css/4/w3.css">
+                                                                            Simples
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <a type="button" target="_blank" class="btn btn-success" href="https://www.w3schools.com/w3css/4/w3.css">
+                                                                            <i class="fa fa-download"></i> Com ícone
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <a type="button" target="_blank" class="btn btn-success" href="https://www.w3schools.com/w3css/4/w3.css">
+                                                                            <i class="fa fa-download fa-lg"></i> Ícone maior
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="col-xs-3">
+                                                                        <a type="button" target="_blank" class="btn btn-lg btn-success" href="https://www.w3schools.com/w3css/4/w3.css">
+                                                                            <i class="fa fa-download fa-lg"></i> Botão maior
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="col-xs-3">
+                                                                        <a type="button" target="_blank" class="btn btn-lg btn-danger" href="https://www.w3schools.com/w3css/4/w3.css">
+                                                                            <i class="fa fa-download fa-lg"></i> Outra cor
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <br />
+
+                                                                Veja o código referente aos <em>hiperlink (botões) acima</em>:
+                                                                <div class="row">
+
+                                                                    <div class="col-xs-12">
+
+                                                                        <pre class="prettyprint">
+&lt;a type="button" target="_blank" class="btn btn-success" href="https://www.w3schools.com/w3css/4/w3.css"&gt;
+    Simples
+&lt;/a&gt;
+
+&lt;a type="button" target="_blank" class="btn btn-success" href="https://www.w3schools.com/w3css/4/w3.css"&gt;
+    &lt;i class="fa fa-download"&gt;&lt;/i&gt; Com ícone
+&lt;/a&gt;
+
+&lt;a type="button" target="_blank" class="btn btn-success" href="https://www.w3schools.com/w3css/4/w3.css"&gt;
+    &lt;i class="fa fa-download fa-lg"&gt;&lt;/i&gt; Ícone maior
+&lt;/a&gt;
+
+&lt;a type="button" target="_blank" class="btn btn-success btn-lg" href="https://www.w3schools.com/w3css/4/w3.css"&gt;
+    &lt;i class="fa fa-download fa-lg"&gt;&lt;/i&gt; Botão maior
+&lt;/a&gt;
+
+&lt;a type="button" target="_blank" class="btn btn-danger btn-lg" href="https://www.w3schools.com/w3css/4/w3.css"&gt;
+    &lt;i class="fa fa-download fa-lg"&gt;&lt;/i&gt; Outra cor
+&lt;/a&gt;
+                                                                        </pre>
+                                                                    </div>
+                                                                    <div class="col-xs-12">
+                                                                        
+
+                                                                    </div>
+                                                                </div>
+                                                            </p>
+
+                                                            <p>Outras dicas:</p>
+                                                            <p>A propriedade <code class="w3-codespan">target="_blank"</code> indica que o <em>download</em> será aberto em uma nova aba.</p>
+                                                            <p>A propriedade <code class="w3-codespan">href=""</code> indica o endereço onde está o documeto a ser "baixado".</p>
+                                                            <p>As classes para mudar as cores dos botões são: <code class="w3-codespan">"btn-success"(verde); "btn-primary"(azul); "btn-info"(azul claro); "btn-warning"(amarelo); "btn-danger"(vermelho)</code>.</p>
+                                                            <p>Os ícones disponíveis são da <em>font</em> "Font Awesome v.4.7.0".<br />Para troca acesse a página <a target="_blank" href="https://fontawesome.com/v4.7.0/icons/">aqui</a>, escolha o ícone, com o botão direito do <em>mouse</em> clique em "Inspecionar" e copie o nome da classe. Depois altere a classe no seu código como no exemplo: class="fa <code class="w3-codespan">fa-download</code>".</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="tab_Imagens">
+                                            <h3 class="box-title"><em>Imagens</em></h3>
+                                            <div class="box box-primary">
+                                                <div class="box-header">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <p>
+                                                                Há uma classe no Bootstrap (<code class="w3-codespan">"img-responsive"</code>) que faz com que a imagem se redimencione conforme o espaço do objeto em que ela esteja inserida (coluna).<br />
+                                                                (Obs.: a relação de altura e largura serão mantidas.)
+                                                                <br /><br />    
+                                                                Veja exemplos abaixo:<br />
+                                                                <span>Imagem em uma coluna de tamanho ".md-12" (Imagem com tamanho natural).</span>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <img class="img-responsive" src="img/Homepage/casaco.png" alt="Exemplo de imagem do W3School" title="Descrição da imagem"/>
+                                                                    </div>
+                                                                </div>
+                                                                <br />
+                                                                <hr />
+                                                                <br />
+
+                                                                <div class="row">
+                                                                    <span>Imagem em duas colunas de tamanho ".md-6" cada uma (Imagem se redimencionou e ocupa toda a coluna da esquerda).<br />
+                                                                        Aqui vale lembrar que em dispositivos pequenos e extra pequenos (tablets e celulares) haverá um "empilhamento" dessas colunas. <br />
+                                                                        Portanto, nesses dispositivos, a imagem (redimencioda) aparecerá primeiro e ficará acima do texto que virá logo abaixo (responsividade das colunas).
+                                                                    </span>
+                                                                    <br /><br />
+                                                                    <div class="col-md-6">
+                                                                        <img class="img-responsive" src="img/Homepage/casaco.png" alt="Exemplo de imagem (casaco)" title="Descrição da imagem"/>
+                                                                    </div>
+                                                                    <div class="hidden-lg hidden-md"><br /></div>
+                                                                    <div class="col-md-6">
+                                                                        <p>
+                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                                            <br />
+                                                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <br />
+
+                                                                Veja o código referente às linhas acima:
+                                                                <div class="row">
+
+                                                                    <div class="col-xs-12">
+
+                                                                        <pre class="prettyprint">Exemplo 1
+&lt;div class="row"&gt;
+    &lt;div class="col-md-12"&gt;
+        &lt;img class="img-responsive" src="img/Homepage/casaco.png" alt="Exemplo de imagem do W3School" title="Descrição da imagem"/&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+Exemplo 2
+&lt;div class="row"&gt;
+    &lt;div class="col-md-6"&gt;
+        &lt;img class="img-responsive" src="img/Homepage/casaco.png" alt="Exemplo de imagem do W3School" title="Descrição da imagem"/&gt;
+    &lt;/div&gt;
+    &lt;div class="hidden-lg hidden-md"&gt;&lt;br /&gt;&lt;/div&gt;
+    &lt;div class="col-md-6"&gt;
+        &lt;p&gt;
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+           &lt;br /&gt;
+           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                                                                        </pre>
+                                                                    </div>
+                                                                    <div class="col-xs-12">
+                                                                        
+
+                                                                    </div>
+                                                                </div>
+                                                            </p>
+
+                                                            <p>Outras dicas:</p>
+                                                            <p>Na propriedade <code class="w3-codespan">alt=""</code> faz-se uma descrião da imagem. Essa descrição só aparecerá caso algum problema ocorra e a imagem "quebre", ou seja, a imagem não apareça por algum motivo. (Essa propriedade não é obrigatória)</p>
+                                                            <p>Na propriedade <code class="w3-codespan">title=""</code> faz-se alguma explicação desejada em relação à imagem. Esse texto aparecerá ao passar o <em>mouse</em> por cima da imagem. (Essa propriedade não é obrigatória)</p>
+                                                            <p>A propriedade <code class="w3-codespan">src=""</code> indica o endereço onde está a imagem. (Obrigatório)</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <i class="fa fa-close"></i>&nbsp;Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%--Aqui é o modal que apresenta a mensagem de que não se pode voltar pelo botão do browser--%>
+
+        <div class="modal fade" id="msgAviso" tabindex="-1" role="dialog" aria-labelledby="CabecalhoMensagem" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger">
+                        <h4 class="modal-title" id="H3"><i class="fa fa-ban"></i>&nbsp;Atenção
+                        </h4>
+                    </div>
+                    <div id="Div4" class="modal-body">
+                        Prezado usuário; <br /><br /><br /><br />
+                        Não é permitido voltar pelo botão do browser.<br /><br />
+                        Para voltar utilize o botão <strong>"Voltar"</strong> que fica na dentro da página ou clique em algum item do menu.
+                    </div>
+                    <div class="modal-footer">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <i class="fa fa-close"></i>&nbsp;Ok</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <style>
+            .modal.centro {
+                text-align: center;
+                padding: 0!important;
+            }
+
+            .modal.centro:before {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+                margin-right: -4px;
+            }
+
+            .modal-dialog.centro {
+                display: inline-block;
+                text-align: left;
+                vertical-align: middle;
+            }
+            .modal-content.centro {
+                border-top: 7px solid #43bfee;
+                border-top-left-radius:10px;
+                border-top-right-radius:10px;
+                border-bottom-left-radius:5px;
+                border-bottom-right-radius:5px;
+
+            }
+
+        </style>
+        <a id="divbtnProcessando" data-toggle="modal" href="#myModal" class="btn btn-primary hidden">Processando</a>
+        <div class="modal centro fade" id="myModal" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog centro modal-sm">
+                <div class="modal-content centro">
+                    <div class="modal-body">
+                        <div class ="row">
+                            <div class ="col-md-12 text-center">
+                                Processando... <br />
+                                Por favor, aguarde.<br /><br />
+                                <img src="img/loader.gif" width="44" height="44" alt="" />
+                                <a id="divbtnFechaProcessando"  href="#" data-dismiss="modal" class="btn hidden">Fechar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="divMensagemModalMaster" tabindex="-1" role="dialog" aria-labelledby="CabecalhoMensagem" aria-hidden="true" style="display: none;" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id="divCabecalhoMaster" class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="CabecalhoMsg">
+                            <asp:Label runat="server" ID="lblTituloMensagemMaster" Text="" /></h4>
+                    </div>
+                    <div id="CorpoMsg" class="modal-body">
+                        <asp:Label runat="server" ID="lblMensagemMaster" Text="" />
+                    </div>
+                    <div class="modal-footer">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <i class="fa fa-close"></i>&nbsp;Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <input class="note-image-input hidden" type="file" id="fileArquivoParaGravarMaster" name="fileArquivoParaGravarMaster" accept="image/*" onchange="javascript:imagePreviewMaster(this);" />
+
+    <a id="aBoletoFipt" href="http://managerweb.ipt.br:8080/login/aluno" target="_blank" style="display:none"></a>
+
+    <a class="hidden" href="javascript:fQTab();">Qual Tab</a>
+
+    <script src="Scripts/bootstrap-notify.min.js"></script>
+
+    <script>
+
+        var tabID = sessionStorage.tabID && 
+            sessionStorage.closedLastTab !== '2' ? 
+            sessionStorage.tabID : 
+            sessionStorage.tabID = Math.random();
+            sessionStorage.closedLastTab = '2';
+            $(window).on('unload beforeunload', function() {
+                  sessionStorage.closedLastTab = '1';
+            });
+
+        if (tabID != null) {
+             document.getElementById('hQTab').value = tabID;
+        }
+        else {
+             document.getElementById('hQTab').value = "";
+        }
+
+        //=========================================================
+
+        function fQTab() {
+            alert(tabID);
+        }
+
+      //======================================
+
+        function fGoToPagina(qPagina) {
+            var f = document.createElement('form');
+            f.action=qPagina;
+            f.method='POST';
+
+            var i=document.createElement('input');
+            i.type='hidden';
+            i.name='hQTab';
+            i.value=document.getElementById('hQTab').value;
+            f.appendChild(i);
+
+            document.body.appendChild(f);
+            f.submit();
+        }
+
+        //=========================================================
+
+        $(".arrastavel").on("mousedown", function(mousedownEvt) {
+    
+            var $draggable = $(this);
+            var x = mousedownEvt.pageX - $draggable.offset().left,
+                y = mousedownEvt.pageY - $draggable.offset().top;
+            $("body").on("mousemove.draggable", function(mousemoveEvt) {
+                $draggable.closest(".modal-dialog").offset({
+                    "left": mousemoveEvt.pageX - x,
+                    "top": mousemoveEvt.pageY - y
+                });
+            });
+            $("body").one("mouseup", function() {
+                $("body").off("mousemove.draggable");
+            });
+            $draggable.closest(".modal").one("bs.modal.hide", function() {
+                $("body").off("mousemove.draggable");
+            });
+        });
+
+        //=========================================================
+
+        function switchBodyState() {
+            var qTema = '';
+            //alert('Antes: ' + document.body.className);
+            //$('#Body').toggleClass('sidebar-collapse');
+            //alert('Antes: ' + document.body.className);
+
+            //if ((document.body.className).indexOf('sidebar-collapse') == -1) {
+            //    qTema = document.body.className + ' sidebar-collapse';
+            //}
+            //else {
+            //    qTema = document.body.className.replace('sidebar-collapse', '');
+            //}
+            //alert('Deois: ' + qTema);
+            switchBodyColor(qTema);
+        }
+                
+
+        function switchBodyColor(qTema) {
+            //alert(document.body.className);
+            if (qTema != "") {
+                if ((document.body.className).indexOf('sidebar-collapse') == -1) {
+                    document.body.className = 'hold-transition ' + qTema + ' sidebar-mini';
+                }
+                else {
+                    document.body.className = 'hold-transition ' + qTema + ' sidebar-mini sidebar-collapse';
+                }
+                
+            }
+                $.ajax({
+                    //type: 'POST',
+                    //url: 'Download.aspx',  //URL solicitada
+                    //data: { skin: 'hold-transition ' + qTema + ' sidebar-mini' },
+                    ////success: function (data) { //O HTML é retornado em 'data'
+                    ////    alert(data); //Se sucesso um alert com o conteúdo retornado pela URL solicitada será exibido.
+                    ////}
+
+                    type: "post",
+                    url: "wsSapiens.asmx/setTema",
+                    contentType: 'application/json; charset=utf-8',
+                    data: "{Tema:'" + qTema + "'}",
+                    //data: { skin: 'hold-transition ' + qTema + ' sidebar-mini' },
+                    dataType: 'json',
+                    async: true,
+                    success: function (data, status) {
+                        //Tratando o retorno com parseJSON
+                        var itens = $.parseJSON(data.d);
+                        //alert('1ok');
+                        //alert(itens[0].Retorno);
+                    }
+                    
+
+                });
+            }
+
+        $(document).ready(function () { 
+                document.getElementById('hQTab').value = tabID;
+                //alert('oi1');
+                fechaLoading();
+                //alert('oi1');
+            })
+
+            window.onload = function () {
+                //alert('window.onload');
+                fechaLoading();
+                if ((document.getElementById('<%=imgLogin3.ClientID%>').src).indexOf("avatarunissex.jpg") != -1) {
+                    $('#divModalTrocaFoto').modal();
+                }
+            }
+
+            function fAbreModalBootstrap() {
+                $('#divDicasBootstrap').modal();
+            }
+
+            function fModalTrocarFoto() {
+                //alert('oi');
+                document.getElementById('<%=imgFotoOriginal.ClientID%>').src=document.getElementById('<%=imgLogin3.ClientID%>').src;
+                $('#divModalAlteraDadosFotoMaster').modal('show');
+            }
+
+            function pageLoad()
+            {
+                var grupo = document.getElementById("hGrupoMenu").value;
+                var item = document.getElementById("hItemMenu").value;
+                if (grupo != "") {
+                    document.getElementById(grupo).classList.add("active");
+                    document.getElementById(item).classList.add("active");
+                }
+
+                if (document.getElementById("hItemMenu2")) {
+                    var item2 = document.getElementById("hItemMenu2").value;
+                    document.getElementById(item2).classList.add("active");
+                }
+                
+                fechaLoading();
+                //alert('oi2');
+                //document.getElementById("lblTitulo").innerHTML = document.getElementById("hTituloPagina").value;
+                //alert(document.getElementById("hCodigoAluno").value);
+            }
+            
+            //==========================================
+            function fAprovarHPCurso(qIdCurso) {
+                var formData = new FormData();
+                formData.append("qIdCurso", qIdCurso);
+                //alert('oi');
+                $.ajax({
+                    type: "POST",
+                    url: "wsSapiens.asmx/fAprovarHPCurso",
+                    data: formData,
+                    cache: true,
+                    contentType: false,
+                    processData: false,
+                    success: function (json) {
+                        if (json[0].P0 == "ok") {
+                            window.location = "./cadCursoGestao.aspx";
+                            return false;
+                        }
+                        else if (json[0].P0 == "deslogado") {
+                            document.getElementById('aBotaoEntrar').style.display = 'block';
+                            document.getElementById('aBotaoEntrarFake').style.display = 'none';
+
+                            document.getElementById('lblTituloMensagemMaster').innerHTML = 'Atenção';
+                            document.getElementById('lblMensagemMaster').innerHTML = json[0].P1;
+                            $("#divCabecalhoMaster").removeClass("bg-info");
+                            $("#divCabecalhoMaster").removeClass("bg-success");
+                            $("#divCabecalhoMaster").removeClass("bg-primary");
+                            $("#divCabecalhoMaster").removeClass("bg-danger");
+                            $("#divCabecalhoMaster").removeClass("bg-warning");
+                            $('#divCabecalhoMaster').addClass('bg-warning');
+                            $('#divMensagemModalMaster').modal();
+                            return false;
+                        }
+                        else {
+                            document.getElementById('lblTituloMensagemMaster').innerHTML = 'Atenção';
+                            document.getElementById('lblMensagemMaster').innerHTML = json[0].P1;
+                            $("#divCabecalhoMaster").removeClass("bg-info");
+                            $("#divCabecalhoMaster").removeClass("bg-success");
+                            $("#divCabecalhoMaster").removeClass("bg-primary");
+                            $("#divCabecalhoMaster").removeClass("bg-danger");
+                            $("#divCabecalhoMaster").removeClass("bg-warning");
+                            $('#divCabecalhoMaster').addClass('bg-warning');
+                            $('#divMensagemModalMaster').modal();
+                            return false;
+                        }
+                    },
+                    error: function (err) {
+                        var myJSON = JSON.stringify(err);
+                        alert(myJSON + "\n Não foi possível realizar o a operação, por favor tente novamente.")
+                        return false;
+                    }
+                });
+            }
+
+        //======================================
+
+            function fAprovarHPTipoCurso(qIdCurso) {
+                var formData = new FormData();
+                formData.append("qIdCurso", qIdCurso);
+                //alert('oi');
+                $.ajax({
+                    type: "POST",
+                    url: "wsSapiens.asmx/fAprovarHPTipoCurso",
+                    data: formData,
+                    cache: true,
+                    contentType: false,
+                    processData: false,
+                    success: function (json) {
+                        if (json[0].P0 == "ok") {
+                            window.location = "./cadTipoCursoGestao.aspx";
+                            return false;
+                        }
+                        else if (json[0].P0 == "deslogado") {
+                            document.getElementById('aBotaoEntrar').style.display = 'block';
+                            document.getElementById('aBotaoEntrarFake').style.display = 'none';
+
+                            document.getElementById('lblTituloMensagemMaster').innerHTML = 'Atenção';
+                            document.getElementById('lblMensagemMaster').innerHTML = json[0].P1;
+                            $("#divCabecalhoMaster").removeClass("bg-info");
+                            $("#divCabecalhoMaster").removeClass("bg-success");
+                            $("#divCabecalhoMaster").removeClass("bg-primary");
+                            $("#divCabecalhoMaster").removeClass("bg-danger");
+                            $("#divCabecalhoMaster").removeClass("bg-warning");
+                            $('#divCabecalhoMaster').addClass('bg-warning');
+                            $('#divMensagemModalMaster').modal();
+                            return false;
+                        }
+                        else {
+                            document.getElementById('lblTituloMensagemMaster').innerHTML = 'Atenção';
+                            document.getElementById('lblMensagemMaster').innerHTML = json[0].P1;
+                            $("#divCabecalhoMaster").removeClass("bg-info");
+                            $("#divCabecalhoMaster").removeClass("bg-success");
+                            $("#divCabecalhoMaster").removeClass("bg-primary");
+                            $("#divCabecalhoMaster").removeClass("bg-danger");
+                            $("#divCabecalhoMaster").removeClass("bg-warning");
+                            $('#divCabecalhoMaster').addClass('bg-warning');
+                            $('#divMensagemModalMaster').modal();
+                            return false;
+                        }
+                    },
+                    error: function (err) {
+                        var myJSON = JSON.stringify(err);
+                        alert(myJSON + "\n Não foi possível realizar o a operação, por favor tente novamente.")
+                        return false;
+                    }
+                });
+            }
+
+        //======================================
+
+            function fAprovarHPDocumentoAcademico(qIdDocumento) {
+                var formData = new FormData();
+                formData.append("qIdDocumento", qIdDocumento);
+                //alert('oi');
+                $.ajax({
+                    type: "POST",
+                    url: "wsSapiens.asmx/fAprovarHPDocumentoAcademico",
+                    data: formData,
+                    cache: true,
+                    contentType: false,
+                    processData: false,
+                    success: function (json) {
+                        if (json[0].P0 == "ok") {
+                            window.location = "./admDocumentosAcademicosGestao.aspx";
+                            return false;
+                        }
+                        else if (json[0].P0 == "deslogado") {
+                            document.getElementById('aBotaoEntrar').style.display = 'block';
+                            document.getElementById('aBotaoEntrarFake').style.display = 'none';
+
+                            document.getElementById('lblTituloMensagemMaster').innerHTML = 'Atenção';
+                            document.getElementById('lblMensagemMaster').innerHTML = json[0].P1;
+                            $("#divCabecalhoMaster").removeClass("bg-info");
+                            $("#divCabecalhoMaster").removeClass("bg-success");
+                            $("#divCabecalhoMaster").removeClass("bg-primary");
+                            $("#divCabecalhoMaster").removeClass("bg-danger");
+                            $("#divCabecalhoMaster").removeClass("bg-warning");
+                            $('#divCabecalhoMaster').addClass('bg-warning');
+                            $('#divMensagemModalMaster').modal();
+                            return false;
+                        }
+                        else {
+                            document.getElementById('lblTituloMensagemMaster').innerHTML = 'Atenção';
+                            document.getElementById('lblMensagemMaster').innerHTML = json[0].P1;
+                            $("#divCabecalhoMaster").removeClass("bg-info");
+                            $("#divCabecalhoMaster").removeClass("bg-success");
+                            $("#divCabecalhoMaster").removeClass("bg-primary");
+                            $("#divCabecalhoMaster").removeClass("bg-danger");
+                            $("#divCabecalhoMaster").removeClass("bg-warning");
+                            $('#divCabecalhoMaster').addClass('bg-warning');
+                            $('#divMensagemModalMaster').modal();
+                            return false;
+                        }
+                    },
+                    error: function (err) {
+                        var myJSON = JSON.stringify(err);
+                        alert(myJSON + "\n Não foi possível realizar o a operação, por favor tente novamente.")
+                        return false;
+                    }
+                });
+            }
+
+        //======================================
+
+            function fAprovarHPDissertacao(qIdAluno, qIdTurma) {
+                var formData = new FormData();
+                formData.append("qIdAluno", qIdAluno);
+                formData.append("qIdTurma", qIdTurma);
+                formData.append("qTab", document.getElementById('hQTab').value);
+                //alert('oi');
+                $.ajax({
+                    type: "POST",
+                    url: "wsSapiens.asmx/fAprovarHPDissertacao",
+                    data: formData,
+                    cache: true,
+                    contentType: false,
+                    processData: false,
+                    success: function (json) {
+                        
+                        if (json[0].P0 == "ok") {
+                            //window.location = "./cadAlunoGestao.aspx?qIdTurma=" + qIdTurma;
+                            var f = document.createElement('form');
+                            f.action= "./cadAlunoGestao.aspx";
+                            f.method='POST';
+
+                            var i=document.createElement('input');
+                            i.type='hidden';
+                            i.name='qIdTurma';
+                            i.value=qIdTurma;
+                            f.appendChild(i);
+
+                            var j=document.createElement('input');
+                            j.type='hidden';
+                            j.name='hQTab';
+                            j.value=document.getElementById('hQTab').value;
+                            f.appendChild(j);
+
+                            document.body.appendChild(f);
+                            f.submit();
+
+                            return false;
+                        }
+                        else if (json[0].P0 == "deslogado") {
+                            document.getElementById('aBotaoEntrar').style.display = 'block';
+                            document.getElementById('aBotaoEntrarFake').style.display = 'none';
+
+                            document.getElementById('lblTituloMensagemMaster').innerHTML = 'Atenção';
+                            document.getElementById('lblMensagemMaster').innerHTML = json[0].P1;
+                            $("#divCabecalhoMaster").removeClass("bg-info");
+                            $("#divCabecalhoMaster").removeClass("bg-success");
+                            $("#divCabecalhoMaster").removeClass("bg-primary");
+                            $("#divCabecalhoMaster").removeClass("bg-danger");
+                            $("#divCabecalhoMaster").removeClass("bg-warning");
+                            $('#divCabecalhoMaster').addClass('bg-warning');
+                            $('#divMensagemModalMaster').modal();
+                            return false;
+                        }
+                        else {
+                            document.getElementById('lblTituloMensagemMaster').innerHTML = 'Atenção';
+                            document.getElementById('lblMensagemMaster').innerHTML = json[0].P1;
+                            $("#divCabecalhoMaster").removeClass("bg-info");
+                            $("#divCabecalhoMaster").removeClass("bg-success");
+                            $("#divCabecalhoMaster").removeClass("bg-primary");
+                            $("#divCabecalhoMaster").removeClass("bg-danger");
+                            $("#divCabecalhoMaster").removeClass("bg-warning");
+                            $('#divCabecalhoMaster').addClass('bg-warning');
+                            $('#divMensagemModalMaster').modal();
+                            return false;
+                        }
+                    },
+                    error: function (err) {
+                        var myJSON = JSON.stringify(err);
+                        alert(myJSON + "\n Não foi possível realizar o a operação, por favor tente novamente.")
+                        return false;
+                    }
+                });
+            }
+
+        //======================================
+
+            function fechaLoading() {
+                var loading = $(".loading");
+                loading.hide();
+            }
+
+
+            function AbreAlteraSenha() {
+                $('#divModalAlterarSenha').modal();
+                //$('#divErroLogin').modal();
+                //alert("Hello world");
+            }
+
+            function AbreErroSenha(qMsg) {
+                document.getElementById("labelErroAlteraSenha").innerHTML = qMsg;
+                $('#divModalErroSenha').modal();
+                //$('#divErroLogin').modal();
+                //alert("Hello world");
+            }
+
+            function AbreSucessoSenha() {
+                $('#divModalSucessoSenha').modal();
+                //$('#divErroLogin').modal();
+                //alert("Hello world");
+            }
+
+            function ClickLink(qLink) {
+                document.getElementById("aMenuMeusDados").click();
+                //$('#divErroLogin').modal();
+                //alert("Hello world");
+            }
+
+
+            var browser = function () {
+                // Return cached result if avalible, else get result then cache it.
+                if (browser.prototype._cachedResult)
+                    return browser.prototype._cachedResult;
+
+                // Opera 8.0+
+                var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+                // Firefox 1.0+
+                var isFirefox = typeof InstallTrigger !== 'undefined';
+
+                // Safari 3.0+ "[object HTMLElementConstructor]" 
+                var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+
+                // Internet Explorer 6-11
+                var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+                // Edge 20+
+                var isEdge = !isIE && !!window.StyleMedia;
+
+                // Chrome 1+
+                var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+                // Blink engine detection
+                var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+                return browser.prototype._cachedResult =
+                    isOpera ? 'Opera' :
+                    isFirefox ? 'Firefox' :
+                    isSafari ? 'Safari' :
+                    isChrome ? 'Chrome' :
+                    isIE ? 'IE' :
+                    isEdge ? 'Edge' :
+                    isBlink ? 'Blink' :
+                    "Don't know";
+            };
+
+           
+            if (browser() == "IE" && document.URL.indexOf("Principal.aspx") != -1) {
+                document.getElementById("lblTituloAvisa").innerHTML = "Navegador não recomendado."
+                document.getElementById("lblCorpoAvisa").innerHTML = "O navegador '<strong>IE (Internet Explorer)</strong>' não é recomendado para o Sapiens.<br /><br />Favor utilizar outros navegadores como:<br />- Chrome<br />- Firefox<br />- Opera<br />- Safari<br />- Edge<br />- entre outros."
+                $('#divModalAvisa').modal();
+            }
+            
+            function setModalMaxHeight(element) {
+                this.$element = $(element);
+                this.$content = this.$element.find('.modal-content');
+                var borderWidth = this.$content.outerHeight() - this.$content.innerHeight();
+                var dialogMargin = $(window).width() > 767 ? 60 : 20;
+                var contentHeight = $(window).height() - (dialogMargin + borderWidth);
+                var headerHeight = this.$element.find('.modal-header').outerHeight() || 0;
+                var footerHeight = this.$element.find('.modal-footer').outerHeight() || 0;
+                var maxHeight = contentHeight - (headerHeight + footerHeight);
+
+                this.$content.css({
+                    'overflow': 'hidden'
+                });
+
+                this.$element
+                  .find('.modal-body').css({
+                      'max-height': maxHeight,
+                      'overflow-y': 'auto'
+                  });
+            }
+
+            $('.modal').on('show.bs.modal', function () {
+                $(this).show();
+                setModalMaxHeight(this);
+            });
+
+            $(window).resize(function () {
+                if ($('.modal.in').length != 0) {
+                    setModalMaxHeight($('.modal.in'));
+                }
+            });
+
+
+            (function(window) { 
+                'use strict'; 
+ 
+                var noback = { 
+	 
+                    //globals 
+                    version: '0.0.1', 
+                    history_api : typeof history.pushState !== 'undefined', 
+	 
+                    init:function(){ 
+                        window.location.hash = '#no-back'; 
+                        noback.configure(); 
+                    }, 
+	 
+                    hasChanged:function(){ 
+                        if (window.location.hash == '#no-back' ){ 
+                            window.location.hash = '#BLOQUEIO';
+                            //mostra mensagem que não pode usar o btn volta do browser
+                            if($( "#msgAviso" ).css('display') =='none'){
+                                $('#msgAviso').modal();
+                            }
+                        } 
+                    }, 
+	 
+                    checkCompat: function(){ 
+                        if(window.addEventListener) { 
+                            window.addEventListener("hashchange", noback.hasChanged, false); 
+                        }else if (window.attachEvent) { 
+                            window.attachEvent("onhashchange", noback.hasChanged); 
+                        }else{ 
+                            window.onhashchange = noback.hasChanged; 
+                        } 
+                    }, 
+	 
+                    configure: function(){ 
+                        if ( window.location.hash == '#no-back' ) { 
+                            if ( this.history_api ){ 
+                                history.pushState(null, '', '#BLOQUEIO'); 
+                            }else{  
+                                window.location.hash = '#BLOQUEIO';
+                                //mostra mensagem que não pode usar o btn volta do browser
+                                if($( "#msgAviso" ).css('display') =='none'){
+                                    $('#msgAviso').modal();
+                                }
+                            } 
+                        } 
+                        noback.checkCompat(); 
+                        noback.hasChanged(); 
+                    } 
+	 
+                }; 
+	 
+                // AMD support 
+                if (typeof define === 'function' && define.amd) { 
+                    define( function() { return noback; } ); 
+                }  
+                    // For CommonJS and CommonJS-like 
+                else if (typeof module === 'object' && module.exports) { 
+                    module.exports = noback; 
+                }  
+                else { 
+                    window.noback = noback; 
+                } 
+                noback.init();
+            }(window)); 
+
+            function fProcessando() {
+                //alert('entrou');
+                document.getElementById('divbtnProcessando').click();
+            }
+
+            function fFechaProcessando() {
+                //alert('entrou');
+                document.getElementById('divbtnFechaProcessando').click();
+            }
+
+        function replaceAll(find, replace, str) {
+            if (str != null) {
+                 while (str.indexOf(find) > -1) {
+                    str = str.replace(find, replace);
+                }
+            }
+            return str;
+            }
+
+        function imagePreviewMaster(input) {
+                
+            var vFileExt = input.value.split('.').pop();
+            if (vFileExt.toUpperCase() == "JPEG" || vFileExt.toUpperCase() == "JPG" || vFileExt.toUpperCase() == "PNG") {
+
+                if (input.files[0].size <= 1048576) {
+
+                    document.getElementById('divBotoesMaster').style.display = 'block';
+                    document.getElementById('divBotaoSalvarMaster').style.display = 'block';
+
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            $('#<%=imgprw.ClientID%>').attr('src', e.target.result);
+                        }
+
+                        reader.readAsDataURL(input.files[0]);
+                        }
+
+                        $("#fileArquivoParaGravarMaster").change(function () {
+                            imagePreviewMaster(this);
+                        });
+                        document.getElementById('divImgPrwMaster').style.display = 'block';
+                        document.getElementById('divMensagensMaster').style.display = 'none';
+                        document.getElementById('divBntLocalizarMaster').style.display = 'none';
+
+                    } else {
+                        document.getElementById('divExtencaoMaster').style.display = 'none';
+                        document.getElementById('divTamanhoMaster').style.display = 'block';
+                        $('#divModalFotoMaster').modal('show');
+                    }
+
+                } else {
+
+                    document.getElementById('divExtencaoMaster').style.display = 'block';
+                    document.getElementById('divTamanhoMaster').style.display = 'none';
+                    $('#divModalFotoMaster').modal('show');
+                }
+
+        }
+
+        function fLimparArquivoMaster() {
+            document.getElementById('<%=imgprw.ClientID%>').src = '%20';
+            document.getElementById('divBotoesMaster').style.display='none'; 
+            document.getElementById('divBotaoSalvarMaster').style.display='none'; 
+            document.getElementById('divImgPrwMaster').style.display = 'none'; 
+            document.getElementById('divMensagensMaster').style.display = 'block'; 
+            document.getElementById('divBntLocalizarMaster').style.display = 'block';
+            $("#fileArquivoParaGravarMaster").val(null);
+        }
+
+        //=======================================================
+
+        function fGirarArquivoMaster() {
+            
+
+            //alert('virou')
+        }
+
+        //=======================================================
+
+        function fSalvarDadosFotoMaster() {
+            var files = $("#fileArquivoParaGravarMaster")[0].files;
+            $.each(files, function (idx, file) {
+                var formData = new FormData();
+                formData.append("qArquivo", file);
+
+                $.ajax({
+                    url: "wsSapiens.asmx/fSalvaFoto",
+                    data: formData,
+                    type: 'POST',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (json) {
+                    
+                        if (json[0].P0 == "ok") {
+                            $('#divModalAlteraDadosFotoMaster').modal('hide');
+                            fLimparArquivoMaster();
+                            $('#imgLogin1').attr('src', json[0].P2);
+                            $('#imgLogin2').attr('src', json[0].P2);
+                            $('#imgLogin3').attr('src', json[0].P2);
+                            //$('#ContentPlaceHolderBody_imgAluno').attr('src', json[0].P2);
+                            
+                            if (document.getElementById("ContentPlaceHolderBody_imgAluno")) {
+                                document.getElementById("ContentPlaceHolderBody_imgAluno").src = json[0].P2;
+                            }
+
+                            $.notify({
+                                icon: 'fa fa-thumbs-o-up fa-2x',
+                                title: '<strong>Alteração da Foto</strong><br /><br />',
+                                message: "Alteração da foto realizada com sucesso",
+
+                            }, {
+                                type: 'info',
+                                delay: 1500,
+                                timer: 1500,
+                                z_index: 5000,
+                                animate: {
+                                    enter: 'animated flipInY',
+                                    exit: 'animated flipOutX'
+                                },
+                                placement: {
+                                    from: "top",
+                                    align: "center"
+                                }
+                            });
+
+                        }
+                        else {
+                            document.getElementById('<% =lblTituloMensagemMaster.ClientID%>').innerHTML = 'Atenção';
+                            document.getElementById('<% =lblMensagemMaster.ClientID%>').innerHTML = json[0].P1;
+                            $("#divCabecalhoMaster").removeClass("alert-info");
+                            $("#divCabecalhoMaster").removeClass("alert-success");
+                            $("#divCabecalhoMaster").removeClass("alert-danger");
+                            $("#divCabecalhoMaster").removeClass("alert-warning");
+                            $('#divCabecalhoMaster').addClass('alert-warning');
+                            $('#divMensagemModalMaster').modal();
+                            return false;
+                        }
+                    },
+                    error: function (err) {
+                        var myJSON = JSON.stringify(err);
+
+                        alert(myJSON + "\n Não foi possível realizar a alteração da foto, por favor tente novamente.")
+                        return false;
+                    }
+                });
+            });
+
+        }
+
+        //=======================================================
+
+        function fBoletoFipt() {
+            document.getElementById('aBoletoFipt').click();
+            return;
+
+            $.ajax({
+                type: "POST",
+                url: "wsSapiens.asmx/fBoletoFipt",
+                dataType: "json",
+                success: function (json) {
+                    alert(json[0].P0);
+
+                    if (json[0].P0 == "ok") {
+
+                        alert("entrou");
+
+                        document.getElementById('aBoletoFipt').click();
+
+                        alert("entrou2");
+
+                        $.notify({
+                            icon: 'fa fa-thumbs-o-up fa-lg',
+                            title: '<strong>Nova aba criada</strong><br /><br />',
+                            message: 'Uma nova aba foi criada para acesso aos boletos no sistema da FIPT.<br />',
+
+                        }, {
+                            type: 'success',
+                            delay: 1500,
+                            timer: 1500,
+                            z_index: 5000,
+                            animate: {
+                                enter: 'animated flipInY',
+                                exit: 'animated flipOutX'
+                            },
+                            placement: {
+                                from: "top",
+                                align: "center"
+                            }
+                        });
+
+                    }
+                    else {
+                        
+                        document.getElementById('<% =lblTituloMensagemMaster.ClientID%>').innerHTML = 'Atenção';
+                        document.getElementById('<% =lblMensagemMaster.ClientID%>').innerHTML = json[0].P1;
+                        $("#divCabecalhoMaster").removeClass("alert-info");
+                        $("#divCabecalhoMaster").removeClass("alert-success");
+                        $("#divCabecalhoMaster").removeClass("alert-danger");
+                        $("#divCabecalhoMaster").removeClass("alert-warning");
+                        $('#divCabecalhoMaster').addClass('alert-warning');
+                        $('#divMensagemModalMaster').modal();
+                        alert("saiu2: " + json[0].P1);
+                        return false;
+                    }
+
+                },
+                error: function (xhr) {
+                    alert("Houve um erro na Confirmação de Pré-Matrícula. Por favor tente novamente.");
+                    alert(xhr.statusText + ' - ' + xhr.responseText);
+                    fFechaProcessando()
+                },
+                failure: function () {
+                    alert("Houve um erro na Confirmação de Pré-Matrícula. Por favor tente novamente.");
+                    fFechaProcessando()
+                }
+            });
+        }
+
+        </script>
+    </form>
+
+</body>
+</html>

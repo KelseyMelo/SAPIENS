@@ -1,0 +1,98 @@
+=======================================
+* Tela Aluno 
+(Sobre dissertações)
+1) enviar e-mail automático para os alunos informando que a dissertação/TCC está publicado
+
+2) Tirar a obrigatoriedade do "histórico escolar" da Lista (Isso deve ser tirado tbém nas dissertações e matriculas em oferecimentos)
+3) Bloquear a matrícula em um oferecimento por falta de documentos.
+
+
+========
+03399343415320000071860610601019288580000059900
+====================
+* Tela Alunos Inadimplentes
+
+1) Na coluna "Data e-mails enviados" apresentar somente a última data (para não "poluir" a tela)(Talvez um botão retangular). 
+1a) Na opção acima, colocar botão para apresentar modal com lista de TODOS os envios informando: Usuário e DataHora.
+2) Incluir coluna "CPF"?
+3) Incluir coluna Data primeira (e última) Parcela?
+4) Colocar no filtro para apresentar registros (Todos, com restrições, sem restrições)
+5) Imprimir coluna com resultado das inconsistências
+6) Imprimir coluna com resultado das Observações FIPT
+====================
+
+====================
+* Tela Solicitação de NF (Tela Extrato do Professor)
+1) Consulta de falta de baixa de NF (inicio e fim)
+(professor_solicitacao_pagamento.status != Pago)
+====================
+
+================================
+Financeiro
+* Desenvolver relatório de Professores com falta por mês. (ok - feito)
+* Desenvolver relatório de bancas (Qualificação e Defesa) agendadas no mês.
+* Desenvolver trava (data de bloqueio) para não permitir alteração em dados de Qualificação e de Defesa com data anteriror a Data de Bloqueio.
+
+==========================================
+
+====================
+* Tela Certificado
+1) Desenvolver um botão para "preview" do PDF na tela de Certificado Gestão.
+
+====================
+
+
+28) Criar aviso para o aluno para que, assim que ele entrar no SAPIENS, já avisar que ele está com pendência financeira
+
+29) Criar link no SAPIENS (área Aluno) para que aluno possa verificar sua situação financeira (parcelas e pagtos via consulta FIPT).
+
+- baseado na lista de inadimplentes criar consistencias que serão passadas pelo Luis (exemplo bloquear matricula em oferecimento).
+
+- Na parte de aluno desenvolver uma verificação da situação financeira lá da FIPT.
+
+
+==========================================
+
+23) Desenvolvimento de Certificado Digital a ser acessado pelo "Portal do Aluno" para os alunos de Curta Duração com Situação de Titulado.
+
+24) Criação de e-mail automático a ser enviado quando um aluno for "matriculado" em uma turma de Curta Duração informando seu login e senha no SAPIENS.
+
+25) Desenvolver Botão de Ementa nos Cursos de Especialização e MBA Internacional semelhante aos que já exeistem hoje como "Corpo Docente" e inserí-los nas páginas de cursos do SAPIENS - publico.
+
+26) Ver Andrea - Eduardo, o contrato poderia ficar visível aos alunos também, o que vc acha? até falei para o Kelsey um jeito igual a Uninove que para prosseguir no processo de matrícula você tem que clicar dizendo que leu e aceita as condições impostas, seria como uma assinatura.
+
+27) Ver Longuinho - Outra sugestão, desta vez da longuinho seria fazer upload do Diploma (mestrado) .
+Já escaneamos o diploma atualmente, então a ideia é criar um espaço Sapiens para armazenar.
+
+
+Criar uma consistencia para advertir que uma aula está sendo marcada para um professor no mesmo dia em que outra aula já está marcada.
+
+=====
+x) Implementar 
+
+=====
+
+======================
+
+
+Não permitir criar um oferecimento onde tem um professor que está "inativado" no cadastro da disciplina.
+
+Não permitir associar professores inativo a um oferecimento.
+
+Não permitir a rematrícula do proprio aluno quando houver pendencias de documentação.
+
+================================
+
+Falar com o Luis sobre TOTUS
+
+Incluir campo "falta" nas aulas dadas
+   Quando atingir um limite das horas travar criar mais aulas
+   Só destravar se uma falta for dada, aí não contabiliza as horas daquela aula.
+   
+
+
+
+
+
+
+

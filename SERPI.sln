@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SERPI.Aplicacao_C", "SERPI.Aplicacao_C\SERPI.Aplicacao_C.csproj", "{76390A32-B430-4E53-B80A-D1BB285698B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SERPI.Dominio_C", "SERPI.Dominio_C\SERPI.Dominio_C.csproj", "{7E38C8ED-D083-4FED-B2E4-5319FF71612C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SERPI.Repositorio_C", "SERPI.Repositorio_C\SERPI.Repositorio_C.csproj", "{E0F1127C-4AFB-47E2-A753-CE99AB1C3A7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SERPI.UI.WebForms_C", "SERPI.UI.WebForms_C\SERPI.UI.WebForms_C.csproj", "{8D84DF63-EFD3-41EC-B6C0-DA22AEC936E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76390A32-B430-4E53-B80A-D1BB285698B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76390A32-B430-4E53-B80A-D1BB285698B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76390A32-B430-4E53-B80A-D1BB285698B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76390A32-B430-4E53-B80A-D1BB285698B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E38C8ED-D083-4FED-B2E4-5319FF71612C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E38C8ED-D083-4FED-B2E4-5319FF71612C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E38C8ED-D083-4FED-B2E4-5319FF71612C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E38C8ED-D083-4FED-B2E4-5319FF71612C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0F1127C-4AFB-47E2-A753-CE99AB1C3A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0F1127C-4AFB-47E2-A753-CE99AB1C3A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0F1127C-4AFB-47E2-A753-CE99AB1C3A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0F1127C-4AFB-47E2-A753-CE99AB1C3A7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D84DF63-EFD3-41EC-B6C0-DA22AEC936E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D84DF63-EFD3-41EC-B6C0-DA22AEC936E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D84DF63-EFD3-41EC-B6C0-DA22AEC936E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D84DF63-EFD3-41EC-B6C0-DA22AEC936E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

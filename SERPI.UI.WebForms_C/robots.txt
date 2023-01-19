@@ -1,0 +1,4 @@
+﻿User-agent: *
+Disallow: /*? #Para bloquear o acesso a todos os URLs que incluam um ponto de interrogação (?) (mais especificamente, qualquer URL que comece com o nome do seu domínio, seguido por qualquer string, por um ponto de interrogação ou por qualquer string)
+Allow: /index.html
+Sitemap: https://sapiens.ipt.br/sitemap.xml

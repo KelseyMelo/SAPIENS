@@ -1,0 +1,51 @@
+﻿body {
+}
+
+
+@media only screen and (max-width:768px) {
+
+    #btnLogin{
+        padding-right: 120px;
+        
+    }
+
+}
+
+@media screen and (min-wihth:992px){
+    ul#opcoes-menu.nav.navbar-nav.hidden-xs.hidden-sm li a{
+        font-size: 20px !important;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width:1200px){
+
+    ul#btnEntrar.nav.navbar-nav.navbar-right.hidden-xs{
+        padding-right: 25px !important;
+    }
+
+}
+
+@media screen and (max-width:1276px){
+    ul#opcoes-menu.nav.navbar-nav.hidden-xs.hidden-sm li a{
+        font-size: 15px !important;
+        padding: 10px;
+    }
+
+    ul#btnEntrar.nav.navbar-nav.navbar-right.hidden-xs{
+        padding-right: 35px !important;
+    }
+}
+
+@media screen and (max-width:1364px){
+
+    ul#btnEntrar.nav.navbar-nav.navbar-right.hidden-xs{
+        padding-right: 35px !important;
+    }
+
+}
+
+
+
+
+
